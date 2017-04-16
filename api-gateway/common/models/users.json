@@ -1,0 +1,36 @@
+{
+  "name": "Users",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string",
+      "required": true,
+      "default": "username"
+    },
+    "fullname": {
+      "type": "string",
+      "default": "Fullname"
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "default": "user@domain.com"
+    },
+    "date-join": {
+      "type": "date"
+    },
+    "majority": {
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

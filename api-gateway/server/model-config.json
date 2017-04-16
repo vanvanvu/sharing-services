@@ -12,5 +12,33 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+  "Users": {
+    "dataSource": null,
+    "public": true
+  },
+  "Experts": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "ratings": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "Payment-Transactions": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "Video-Call-Transactions": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "Banking-Infor": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "User-Status": {
+    "dataSource": "mongoDbs",
+    "public": true
   }
 }
