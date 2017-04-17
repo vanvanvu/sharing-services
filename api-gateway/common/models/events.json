@@ -1,15 +1,13 @@
 {
-  "name": "Payment-Transactions",
+  "name": "Events",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "client-token": {
-      "type": "string",
-      "required": true,
-      "default": ""
+    "ticket": {
+      "type": "string"
     }
   },
   "validations": [],

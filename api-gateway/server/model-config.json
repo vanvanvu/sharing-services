@@ -40,5 +40,9 @@
   "User-Status": {
     "dataSource": "mongoDbs",
     "public": true
+  },
+  "Events": {
+    "dataSource": "mongoDbs",
+    "public": true
   }
 }
