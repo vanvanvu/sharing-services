@@ -1,7 +1,6 @@
 import braintree
 import json, pika, time
 
-
 @app.route("/client_token", methods=["GET"])
 def client_token():
     return braintree.ClientToken.generate()
