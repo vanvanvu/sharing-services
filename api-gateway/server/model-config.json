@@ -44,5 +44,12 @@
   "Events": {
     "dataSource": "mongoDbs",
     "public": true
+  },
+  "accounts": {
+    "dataSource": "mongoDbs",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   }
 }
