@@ -10,7 +10,11 @@ module.exports = function(app) {
 
   //login page
   app.get('/', function(req, res) {
-    var credentials = dsConfig.emailDs.transports[0].auth;
+    //var credentials = dsConfig.emailDs.transports[0].auth;
+    var credentials = {
+      "user": "email@address.com",
+      "pass": "xxx"
+    }
     res.render('login', {
       email: credentials.user,
       password: credentials.pass

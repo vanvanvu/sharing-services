@@ -13,8 +13,31 @@
       "./mixins"
     ]
   },
+  "User": {
+    "dataSource": "mongoDbs",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mongoDbs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDbs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDbs",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongoDbs",
+    "public": false
+  },
+  "Email": {
+    "dataSource": "mongoDbs"
+  },
   "Users": {
-    "dataSource": null,
+    "dataSource": "mongoDbs",
     "public": true
   },
   "Experts": {
@@ -49,7 +72,7 @@
     "dataSource": "mongoDbs",
     "public": true,
     "options": {
-      "emailVerificationRequired": true
+      "emailVerificationRequired": false
     }
   }
 }
