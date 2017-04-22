@@ -6,18 +6,24 @@
     "validateUpsert": true
   },
   "properties": {
-    "username": {
-      "type": "string",
-      "required": true
+    "level": {
+      "type": "string"
     },
-    "majorities": {
-      "type": [
-        "string"
-      ]
+    "brief": {
+      "type": "string"
+    },
+    "majority": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "User": {
+      "type": "belongsTo",
+      "model": "User-Profiles",
+      "foreignKey": "publisherId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

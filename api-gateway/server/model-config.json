@@ -38,41 +38,45 @@
   },
   "Users": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "Experts": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "ratings": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "Payment-Transactions": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "Video-Call-Transactions": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "Banking-Infor": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "User-Status": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "Events": {
     "dataSource": "mongoDbs",
-    "public": true
+    "public": false
   },
   "accounts": {
     "dataSource": "mongoDbs",
-    "public": true,
+    "public": false,
     "options": {
       "emailVerificationRequired": false
     }
+  },
+  "User-Profiles": {
+    "dataSource": "mongoDbs",
+    "public": true
   }
 }

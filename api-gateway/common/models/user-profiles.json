@@ -1,0 +1,43 @@
+{
+  "name": "User-Profiles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "isFemale": {
+      "type": "boolean",
+      "default": false
+    },
+    "isExpert": {
+      "type": "boolean",
+      "default": false
+    },
+    "biology": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Expert": {
+      "type": "hasMany",
+      "model": "Experts",
+      "foreignKey": "publisherId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
