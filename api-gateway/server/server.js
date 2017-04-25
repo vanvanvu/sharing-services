@@ -20,6 +20,9 @@ app.start = function() {
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
+app.use(loopback.token({
+    model: app.models.accessToken
+}));
 boot(app, __dirname, function(err) {
   if (err) throw err;
 

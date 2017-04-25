@@ -14,6 +14,9 @@
     },
     "majority": {
       "type": "string"
+    },
+    "catalogy": {
+      "type": "string"
     }
   },
   "validations": [],
