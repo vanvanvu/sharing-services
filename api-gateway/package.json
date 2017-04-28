@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "async": "^2.3.0",
+    "braintree": "^2.0.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^1.3.0",

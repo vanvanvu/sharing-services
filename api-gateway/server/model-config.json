@@ -68,7 +68,7 @@
     "dataSource": "mongoDbs",
     "public": false
   },
-  "accounts": {
+  "Accounts": {
     "dataSource": "mongoDbs",
     "public": false,
     "options": {
@@ -76,6 +76,10 @@
     }
   },
   "User-Profiles": {
+    "dataSource": "mongoDbs",
+    "public": true
+  },
+  "payments": {
     "dataSource": "mongoDbs",
     "public": true
   }
