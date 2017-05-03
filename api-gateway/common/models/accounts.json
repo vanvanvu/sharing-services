@@ -8,7 +8,13 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+    "profile": {
+      "type": "hasOne",
+      "model": "Profiles",
+      "foreignKey": "accountId"
+    }
+  },
   "acls": [
     {
       "accessType": "READ",

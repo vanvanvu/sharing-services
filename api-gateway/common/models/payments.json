@@ -1,11 +1,14 @@
 {
-  "name": "payments",
+  "name": "Payments",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "owner": {
+      "type": "string"
+    },
     "clientToken": {
       "type": "string"
     }

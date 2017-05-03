@@ -1,5 +1,5 @@
 {
-  "name": "ratings",
+  "name": "Ratings",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

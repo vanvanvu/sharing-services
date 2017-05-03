@@ -1,6 +1,7 @@
 'use strict';
 var config = require('../../server/config.json');
 var path = require('path');
+var app = require('../../server/server');
 
 module.exports = function(Accounts) {
   //send verification email after registration
@@ -51,4 +52,36 @@ module.exports = function(Accounts) {
       console.log('> sending password reset email to:', info.email);
     });
   });*/
+
+  Accounts.observe('after save', function filterProperties(ctx, next) {
+    //if (ctx.options && ctx.options.skipPropertyFilter) return next();
+    if (ctx.instance && ctx.isNewInstance) {
+      var account = ctx.instance;
+      // Create profile for account
+      account.profile(function (err, profile) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        if (profile !== null)
+          return;
+        var data = {
+          username: "",
+          fullname: "",
+          isFemale: false,
+          isExpert: false,
+          biology: "",
+          status: "off_line"
+        };
+        account.profile.create(data, function(err, data) {
+          if (err) {
+            console.log(err);
+          }
+          console.log(data);
+          }
+        );
+      });
+    }
+    next();
+  });
 };
