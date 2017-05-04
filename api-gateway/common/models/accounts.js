@@ -66,7 +66,7 @@ module.exports = function(Accounts) {
         if (profile !== null)
           return;
         var data = {
-          username: "",
+          username: account.username,
           fullname: "",
           isFemale: false,
           isExpert: false,
