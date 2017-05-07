@@ -5,7 +5,7 @@ ACL rules of Models
 Belong to ACL rules of User model 
 ```
 
-## User-Profiles
+## Profiles
 ```angular2html
 * Logged-in users can view edit their own profile, but can not delete profile entry 
 * Admin-user have full control

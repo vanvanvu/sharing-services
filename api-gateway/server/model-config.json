@@ -46,7 +46,7 @@
   },
   "Payments": {
     "dataSource": "mongoDbs",
-    "public": false
+    "public": true
   },
   "Events": {
     "dataSource": "mongoDbs",
@@ -63,8 +63,12 @@
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Payments": {
+  "Categories": {
     "dataSource": "mongoDbs",
+    "public": true
+  },
+  "SearchEngine": {
+    "dataSource": null,
     "public": true
   }
 }

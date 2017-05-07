@@ -12,6 +12,10 @@
     "fullname": {
       "type": "string"
     },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    },
     "isFemale": {
       "type": "boolean",
       "default": false
@@ -30,9 +34,9 @@
   "validations": [],
   "relations": {
     "account": {
-    "type": "belongsTo",
-    "model": "Accounts",
-    "foreignKey": "accountId"
+      "type": "belongsTo",
+      "model": "Accounts",
+      "foreignKey": "accountId"
     },
     "Expert": {
       "type": "hasMany",

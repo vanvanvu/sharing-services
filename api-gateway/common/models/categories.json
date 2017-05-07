@@ -1,34 +1,29 @@
 {
-  "name": "Experts",
+  "name": "Categories",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "level": {
+    "name": {
       "type": "string"
     },
     "brief": {
       "type": "string"
     },
-    "majority": {
+    "thumbnailUrl": {
       "type": "string"
     },
-    "catalogy": {
+    "imageUrl": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "User": {
+    "Expert": {
       "type": "belongsTo",
-      "model": "Profiles",
-      "foreignKey": "publisherId"
-    },
-    "Service": {
-      "type": "hasOne",
-      "model": "Categories",
+      "model": "Experts",
       "foreignKey": "expertId"
     }
   },
