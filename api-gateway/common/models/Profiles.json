@@ -39,7 +39,7 @@
       "foreignKey": "accountId"
     },
     "Expert": {
-      "type": "hasMany",
+      "type": "hasOne",
       "model": "Experts",
       "foreignKey": "publisherId"
     }

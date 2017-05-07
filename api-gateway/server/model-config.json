@@ -70,5 +70,9 @@
   "SearchEngine": {
     "dataSource": null,
     "public": true
+  },
+  "Bookings": {
+    "dataSource": "mongoDbs",
+    "public": true
   }
 }

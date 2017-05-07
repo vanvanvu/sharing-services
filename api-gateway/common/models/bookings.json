@@ -1,0 +1,19 @@
+{
+  "name": "Bookings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "experts": {
+      "type": "belongsTo",
+      "model": "Experts",
+      "foreignKey": "expertId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

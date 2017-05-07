@@ -6,17 +6,8 @@
     "validateUpsert": true
   },
   "properties": {
-    "level": {
-      "type": "string"
-    },
-    "brief": {
-      "type": "string"
-    },
-    "majority": {
-      "type": "string"
-    },
-    "catalogy": {
-      "type": "string"
+    "serviceCount": {
+      "type": "number"
     }
   },
   "validations": [],
@@ -27,8 +18,13 @@
       "foreignKey": "publisherId"
     },
     "Service": {
-      "type": "hasOne",
+      "type": "hasMany",
       "model": "Categories",
+      "foreignKey": "expertId"
+    },
+    "booking": {
+      "type": "hasOne",
+      "model": "Bookings",
       "foreignKey": "expertId"
     }
   },

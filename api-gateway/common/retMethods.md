@@ -6,7 +6,8 @@ Return json structure
 ```angular2html
 {
     experts: [
-        0: {    
+        0: {
+            "expertId": "String",
             "username": "String",
             "fullname": "String",
             "gender": "String(female, male, or ...)",
@@ -20,11 +21,13 @@ Return json structure
     ],
     categories: [
         0: {
-            "sevice": "String",
+            "serviceId": "String",
+            "service": "String",
             "brief": "String",
             "thumbnail": "String",
             "experts": [
-                0: {    
+                0: {
+                    "expertId": "String",
                     "username": "String",
                     "fullname": "String",
                     "gender": "String(female, male, or ...)",

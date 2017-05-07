@@ -5,7 +5,13 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "comments": {
+      "type": [
+        "object"
+      ]
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [],
