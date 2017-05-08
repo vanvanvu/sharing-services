@@ -48,10 +48,6 @@
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Events": {
-    "dataSource": "mongoDbs",
-    "public": false
-  },
   "Accounts": {
     "dataSource": "mongoDbs",
     "public": true,
