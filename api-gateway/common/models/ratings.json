@@ -6,14 +6,27 @@
     "validateUpsert": true
   },
   "properties": {
-    "comments": {
-      "type": [
-        "object"
-      ]
+    "comment": {
+      "type": "string"
+    },
+    "ownerId": {
+      "type": "string"
+    },
+    "rate": {
+      "type": "number"
+    },
+    "ownername": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "experts": {
+      "type": "belongsTo",
+      "model": "Experts",
+      "foreignKey": "expertId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

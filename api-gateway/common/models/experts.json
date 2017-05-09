@@ -26,6 +26,11 @@
       "type": "hasOne",
       "model": "Bookings",
       "foreignKey": "expertId"
+    },
+    "ratings": {
+      "type": "hasMany",
+      "model": "Ratings",
+      "foreignKey": "expertId"
     }
   },
   "acls": [],
