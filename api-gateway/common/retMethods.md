@@ -12,7 +12,12 @@ Return json structure
             "fullname": "String",
             "gender": "String(female, male, or ...)",
             "avatarUrl": "String",
-            "service": "String",
+            "services": [
+                "serviceName": "String",
+                "serviceId": "String",
+                "brief": "String",
+                "thumbnail": "String"
+            ],
             "brief": "String",
             "rating": 0->5
         },
@@ -32,7 +37,6 @@ Return json structure
                     "fullname": "String",
                     "gender": "String(female, male, or ...)",
                     "avatarUrl": "String",
-                    "service": "String",
                     "brief": "String",
                     "rating" 0->5
                 },

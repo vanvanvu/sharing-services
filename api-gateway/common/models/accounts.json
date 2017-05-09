@@ -9,7 +9,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "profile": {
+    "profiles": {
       "type": "hasOne",
       "model": "Profiles",
       "foreignKey": "accountId"

@@ -38,11 +38,11 @@
   },
   "Experts": {
     "dataSource": "mongoDbs",
-    "public": false
+    "public": true
   },
   "Ratings": {
     "dataSource": "mongoDbs",
-    "public": false
+    "public": true
   },
   "Payments": {
     "dataSource": "mongoDbs",
