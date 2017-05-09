@@ -41,7 +41,7 @@
     "Expert": {
       "type": "hasOne",
       "model": "Experts",
-      "foreignKey": "publisherId"
+      "foreignKey": "profileId"
     },
     "accounts": {
       "type": "belongsTo",

@@ -15,7 +15,7 @@
     "User": {
       "type": "belongsTo",
       "model": "Profiles",
-      "foreignKey": "publisherId"
+      "foreignKey": "profileId"
     },
     "Service": {
       "type": "hasMany",

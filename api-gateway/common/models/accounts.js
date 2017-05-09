@@ -58,7 +58,7 @@ module.exports = function(Accounts) {
     if (ctx.instance && ctx.isNewInstance) {
       var account = ctx.instance;
       // Create profile for account
-      account.profile(function (err, profile) {
+      account.profiles(function (err, profile) {
         if (err) {
           console.log(err);
           return;
@@ -73,7 +73,7 @@ module.exports = function(Accounts) {
           biology: "",
           status: "off_line"
         };
-        account.profile.create(data, function(err, data) {
+        account.profiles.create(data, function(err, data) {
           if (err) {
             console.log(err);
           }
