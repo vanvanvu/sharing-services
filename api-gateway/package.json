@@ -12,6 +12,7 @@
     "braintree": "^2.0.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "elasticsearch": "^13.0.1",
     "helmet": "^1.3.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",

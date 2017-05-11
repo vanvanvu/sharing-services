@@ -1,7 +1,51 @@
 'use strict';
 
+const elasticsearch = require('elasticsearch');
+
 module.exports = function(Searchengine) {
-  Searchengine.general = function(searchText) {
+  Searchengine.test = function(searchText, cb) {
+    var esClient = new elasticsearch.Client({
+      host: '127.0.0.1:9200',
+      log: 'error'
+    });
+
+    var search = function search(index, body, callback) {
+      return esClient.search({index: index, body: body});
+    };
+    let body = {
+      size: 20,
+      from: 0,
+      query: {
+        match: {
+          title: {
+            query: searchText,
+            type: 'phrase'
+          }
+        }
+      }
+    };
+
+    console.log(`retrieving all documents (displaying ${body.size} at a time)...`);
+    search('library', body)
+    .then(results => {
+      console.log(`found ${results.hits.total} items in ${results.took}ms`);
+      console.log(`returned article titles:`);
+      cb(null, results.hits.hits);
+      results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - ${hit._source.title}`));
+    })
+    .catch(reason => {
+      console.error;
+      cb(null, []);
+    })
+  };
+
+  Searchengine.remoteMethod('test', {
+        accepts: {arg: 'searchText', type: 'string'},
+        returns: {arg: 'result', type: 'array'},
+        http: {verb: 'get'}
+  });
+
+  Searchengine.general = function(searchText, cb) {
       var result = {testField : "testmessage"};
       cb(null, result);
   };
