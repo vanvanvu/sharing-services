@@ -9,18 +9,17 @@ module.exports = function(Searchengine) {
       log: 'error'
     });
 
-    var search = function search(index, body, callback) {
+    var search = function search(index, body) {
       return esClient.search({index: index, body: body});
     };
     let body = {
       size: 20,
       from: 0,
       query: {
-        match: {
-          title: {
-            query: searchText,
-            type: 'phrase'
-          }
+        multi_match: {
+          query: searchText,
+          type: 'phrase_prefix',
+          fields : [ "title", "journal" ]
         }
       }
     };
