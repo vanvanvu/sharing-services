@@ -190,35 +190,41 @@ __Response status code:__
 __Response body:__
 ```
 {
-    experts: [
+    Results: [
         0: {
-            "expertId": "String",
-            "name": "String",
-            "fullname": "String",
-            "gender": "String(female, male, or ...)",
-            "avatarUrl": "String",
-            "serviceCount": "number",
-            "services": [
-                0: {
-                    "serviceName": "String",
-                    "serviceId": "String"
-                },
-                1: {...}
-            ]
-        },
-        1: {...},
-        2: {...}
-    ],
-    categories: [
-        0: {
-            "serviceId": "String",
-            "serviceName": "String",
-            "brief": "String",
-            "thumbnail": "String"
+            "_type": "",
+            "_id": "",
+            "_data": {
+            }
         },
         1: {...},
         2: {...}
     ]
+}
+```
+ 
+```
+_type = 'Profiles'
+{
+    "username": "String",
+    "fullname": "String",
+    "gender": "String(female, male, or ...)",
+    "avatarUrl": "String",
+    "serviceCount": "number",
+    "services": [
+        0: {
+            "serviceName": "String",
+            "serviceId": "String"
+        },
+        1: {...}
+    ]
+}
+
+_type = "Categories"
+{
+    "serviceName": "String",
+    "brief": "String",
+    "thumbnail": "String"
 }
 ```
 ### Search Experts
@@ -239,32 +245,24 @@ __Response status code:__
 __Response body:__
 ```
 {
-    experts: [
+    Results: [
         0: {
-            "expertId": "String",
-            "username": "String",
-            "fullname": "String",
-            "gender": "String(female, male, or ...)",
-            "avatarUrl": "String",
-            "serviceCount": "number",
-            "services": [
-                0: {
-                    "serviceName": "String",
-                    "serviceId": "String",
-                    "brief": "String",
-                    "thumbnail": "String"
-                },
-                1: {...}
-            ],
-            "ratings": [
-                0: {
-                    "ownername": "String",
-                    "ownerId" "String",
-                    "rate": "number",
-                    "comment": "String"
-                },
-                1: {...}
-            ]
+            "_type": "Profiles",
+            "_id": "",
+            "_data": {
+                "username": "String",
+                "fullname": "String",
+                "gender": "String(female, male, or ...)",
+                "avatarUrl": "String",
+                "serviceCount": "number",
+                "services": [
+                    0: {
+                        "serviceName": "String",
+                        "serviceId": "String"
+                    },
+                    1: {...}
+                ]
+            }
         },
         1: {...},
         2: {...}
@@ -290,23 +288,15 @@ __Response status code:__
 __Response body:__
 ```
 {
-    categories: [
+    Results: [
         0: {
-            "serviceId": "String",
-            "serviceName": "String",
-            "brief": "String",
-            "thumbnail": "String",
-            "experts": [
-                0: {
-                    "expertId": "String",
-                    "name": "String",
-                    "fullname": "String",
-                    "gender": "String(female, male, or ...)",
-                    "avatarUrl": "String"
-                },
-                1: {...},
-                2: {...}
-            ]
+            "_type": "Categories",
+            "_id": "",
+            "_data": {
+                "serviceName": "String",
+                "brief": "String",
+                "thumbnail": "String"
+            }
         },
         1: {...},
         2: {...}
