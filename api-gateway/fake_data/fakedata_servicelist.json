@@ -1,193 +1,153 @@
 {
-  "services":
-
+  "services": [
+    {"servicename": "Accountant", "brief": "Accountants and auditors keep track of a company's money; managers look at the accountants' reports to see how well their companies are doing."},
+    {"servicename": "Actor", "brief": "Actors perform in stage, radio, television, video, or motion pictures. It's hard for most actors to find steady work. Only a few become famous stars. They also teach in high school or college drama departments, acting conservatories, or public programs."},
+    {"servicename": "Actuary", "brief": "Actuaries deal with risk; they decide how likely things such as death, sickness and disability are to occur, as well as the costs of these things."},
+    {"servicename": "Air Traffic Controller", "brief": "Video explains what controllers do and how they direct planes at the airport."},
+    {"servicename": "Animal Keeper", "brief": "Juan is an animal keeper of the Asia Trail at the National Zoo. He talks about his daily duties and sloth bears."},
+    {"servicename": "Announcers", "brief": "Announcers, sometimes called deejays, present music, news, and sports and may provide commentary or interview guests about these topics or other important events."},
+    {"servicename": "Aquarium Curator and Herpetologist", "brief": "Find out what it's like being in charge of  an aquarium and working with reptiles and amphibians."},
+    {"servicename": "Archeologists", "brief": "Joy and Kate are archeologists from the National Park Service. In this video, they talk about the tools they use and what they uncovered."},
+    {"servicename": "Archeologists", "brief": "Archeologists work by digging into sites and collections. When they excavate, archeologists use tools you might recognize."},
+    {"servicename": "Archeology and Anthropology Career Guide", "brief": "Anthropology is the study of human beings and it helps us to understand how cultures are different or alike and how they have changed. Archeology is the study of past human cultures. Learn more about a careers in anthropology and archeology."},
+    {"servicename": "Architect", "brief": "Tony is an architect at the General Services Administration. He talks about saving energy and how he became an architect."},
+    {"servicename": "Army DentistMeet Captain Ryan Romero.  He talks about being a dentist and how to take care of your teeth.Army Dentist", "brief": "Meet Captain Ryan.  He talks about being a dentist and how to take care of your teeth."},
+    {"servicename": "Artist", "brief": "Artists make art to express what they are feeling or thinking. They use many methods", "brief": "drawing, painting, sculpting, even computers."},
+    {"servicename": "Astronaut", "brief": "Meet Kay. She talks about the space program and how she became an astronaut."},
+    {"servicename": "Athlete", "brief": "Professional athletes include baseball, football, basketball, and tennis players; golfers, ice skaters, skiers, stock car drivers, and rodeo riders: anyone playing a sport for money."},
+    {"servicename": "Aviation Careers", "brief": "Learn about careers that involve airplanes including air traffic controllers, airplane mechanics, flight attendants and more careers in aviation."},
+    {"servicename": "Bird Specialist", "brief": "Ornithologist", "brief": "Sarah Stock is a wildlife biologist who studies birds. She talks about how she studies owls."},
+    {"servicename": "Bookkeeping Clerk", "brief": "Any organization that uses money has to keep records", "brief": "records of where money came from and where it went; bookkeeping clerks keep and track these financial records."},
+    {"servicename": "Brain Scientist", "brief": "Meet Doctor Dave, a scientist who studies the brain and how addiction affects the brain."},
+    {"servicename": "Budget Analyst", "brief": "Budget analysts help public and private companies organize their finances. They prepare budget reports and monitor spending."},
+    {"servicename": "Car Mechanic", "brief": "Automotive service technicians and mechanics fix cars or light trucks."},
+    {"servicename": "Career Advice", "brief": "Students and Career Advisors", "brief": "Tools to help you identify your interests, find careers that match your talents, explore education options and more."},
+    {"servicename": "Career Videos", "brief": "CareerOneStop", "brief": "Find videos about 550 different jobs."},
+    {"servicename": "Carpenter", "brief": "Carpenters build many things from wood and other materials, like buildings and boats. They construct, erect, install, and repair structures and other fixtures."},
+    {"servicename": "Chefs and Head Cooks", "brief": "Chefs and head cooks oversee the daily food service operation of a restaurant or other food service establishment."},
+    {"servicename": "Chef at the White House", "brief": "Meet Cris Comerford and find out about her job as an executive chef at the White House."},
+    {"servicename": "Chemist", "brief": "Find out about a career in chemistry."},
+    {"servicename": "Childcare Worker", "brief": "Childcare workers teach and care for children while their parents are away. They play games, do art, and read books."},
+    {"servicename": "CIA Museum: The People Behind the Magic", "brief": "Meet the people that make exhibits come to life and are the staff of the CIA Museum."},
+    {"servicename": "City (Urban) Planner", "brief": "City (urban) planners figure out the best way to use the land in cities and neighborhoods; they report on the best location for houses, stores, and parks."},
+    {"servicename": "Civil Engineer", "brief": "Civil engineers design things like roads, buildings, airports, tunnels, dams, bridges, or water supply and sewage systems."},
+    {"servicename": "Climate Science", "brief": "Learn about green jobs in recycling,renewable energy, engineering and earth science that monitor and help the planet."},
+    {"servicename": "Coach", "brief": "Coaches help people learn how to play a sport. They start by teaching them the basics and the proper form and technique."},
+    {"servicename": "Coder", "brief": "Learn Coding and Build a Future", "brief": "Meet Elaine, a Front-End Developer at the General Services Administration and find out more about how you can start learning to code now!"},
+    {"servicename": "Community Service", "brief": "Catch the Spirit", "brief": "Ideas and information on how teens can help make their community a better place. (PDF)"},
+    {"servicename": "Computer Hardware Engineer", "brief": "Computer hardware engineers research, design, develop, test, and oversee the installation of computer hardware."},
+    {"servicename": "Computer Information Technology Learn more about careers supporting, programming, building and fixing computers and networks."},
+    {"servicename": "Computer Software Developer", "brief": "Computer software engineers apply computer science, engineering, and math to design, develop, and test software."},
+    {"servicename": "Computer Support Specialist", "brief": "Computer support specialists help people use computers."},
+    {"servicename": "Cost Estimator", "brief": "Cost estimators figure out how much a project or product will cost; this helps business owners and managers decide whether to build a structure or manufacture a product."},
+    {"servicename": "Curators, Museum Technicians and Conservators", "brief": "Experts preserving important records and artifacts, including works of art, documents, photographs, coins and historic objects."},
+    {"servicename": "Dancer", "brief": "Dancers express ideas, stories, rhythm, and sound with their bodies. Dancers work in musical shows, in folk, ethnic, tap, and jazz dances."},
+    {"servicename": "Database Administrator", "brief": "Data must be stored, organized, and managed. Database administrators work with database software to find ways to do this."},
+    {"servicename": "Dentist", "brief": "Meet Captain Ryan Romero.  He talks about being a dentist and how to take care of your teeth."},
+    {"servicename": "Designer", "brief": "Designers have a desire to create; they mix knowledge with artistic ability. Designers focus in a specific area of design, such as cars or websites."},
+    {"servicename": "Desktop Publisher", "brief": "Using computers, these workers combine printed materials, numbers, pictures, and charts to prepare publications and booklets."},
+    {"servicename": "Developer", "brief": "Meet Elaine, a website developer with the General Services Administration. She helps make the government easy and available to everyone online."},
+    {"servicename": "Diplomat", "brief": "Careers at the State Department", "brief": "Do you find the life of a diplomat interesting but don't know where to begin? You may just find what you're looking for."},
+    {"servicename": "Discovering Your Interests and Talents", "brief": "GirlsHealth.gov", "brief": "Taking the time to think about your interests and abilities is the first step toward discovering what it is you want to do now or even later when you become an adult."},
+    {"servicename": "Doctor (Physician)", "brief": "Doctors treat injuries and sick patients. Doctors examine patients, find out patient's medical histories and give medications."},
+    {"servicename": "Dog Doctors", "brief": "Choosing A Veterinary Career", "brief": "What are the duties of a veterinarian? Find out the answers."},
+    {"servicename": "Dog Trainer", "brief": "Meet Bridget. She's a canine handler with U.S. Customs and Border Protection. She trains dogs to search and find illegal drugs."},
+    {"servicename": "Drafter", "brief": "Drafters make drawings and plans; some plans show how to make objects like toys, toasters, and machinery or larger things like houses and office buildings."},
+    {"servicename": "Earth Science Careers", "brief": "Learn more about earth science careers."},
+    {"servicename": "Electrical Engineer", "brief": "Electrical engineers design new and better electronics; they also test equipment and solve problems."},
+    {"servicename": "Electrician", "brief": "Electricians bring us electricity. They put in the wires that carry electricity through houses, offices, and factories; they also fix electric machines."},
+    {"servicename": "Engineering", "brief": "Math, science and technology are as varied as they are exciting; find out more about the different fields in engineering."},
+    {"servicename": "Engineer Girl!", "brief": "At this cool site you can check out fun facts, learn about women in engineering and what you need to know to become one."},
+    {"servicename": "Engineering Technician", "brief": "Learn what engineering technicians do and how they help engineers and scientists do research and development."},
+    {"servicename": "Environmentally-Focused Jobs", "brief": "EEK!", "brief": "Career Zone", "brief": "Want a job that involves helping take care of our planet? Check out these careers."},
+    {"servicename": "Environmental Scientist", "brief": "Environmental scientists find and fix pollution and other environmental problems by figuring out what is in the air, water, and soil to make sure that our environment is safe."},
+    {"servicename": "Farmer", "brief": "Farmers grow crops and raise animals; they decide when to plant, fertilize, harvest, and sell crops."},
+    {"servicename": "Fashion Designer", "brief": "Fashion designers help create dresses, suits, shoes, and other clothing and accessories. Designers study fashion trends, sketch designs of clothing and accessories, select colors and fabrics, and oversee the final production of their designs."},
+    {"servicename": "FBI Fitness Instructor", "brief": "Meet E.J. He talks about teaching at the FBI Academy and why you should keep moving."},
+    {"servicename": "FBI Investigator", "brief": "Special Agents have been investigating and catching spies for over 60 years! A spy is a person who keeps secret watch on another person or thing to get information."},
+    {"servicename": "Federal Wildlife Officer", "brief": "Meet Gabriel. He is an officer that protects wildlife for the U.S. Fish and Wildlife Service. Learn about his tools and what he does on patrol."},
+    {"servicename": "Financial Analyst", "brief": "Financial analysts help people decide how to invest their money."},
+    {"servicename": "Fire Archeologist", "brief": "A fire archeologist provides information on vulnerable plant or animal species, or cultural resources--before, during and after wildland fire incidents and prescribed burns."},
+    {"servicename": "Firefighter", "brief": "Firefighters put out fires, which is not as simple as it may sound. Fighting fires is dangerous and complex, and it takes organization and teamwork."},
+    {"servicename": "Fish Specialist", "brief": "Marine Biologist", "brief": "Meet Carole. She specializes in studying tropical-marine and deep-sea fish and wildlife."},
+    {"servicename": "Fitness Trainers and Instructors", "brief": "Trainers plan and teach activities that people of all ages enjoy in their free time. This may include camping, sports, arts and crafts, dance, or drama."},
+    {"servicename": "Food Scientist", "brief": "Agricultural and food scientists look for the answers to questions about how farms can use less labor, control pests and weeds, conserve soil and water."},
+    {"servicename": "Foreign Service Officer", "brief": "Future State", "brief": "U.S. Department of State for Youth", "brief": "The State Department has embassies in more than 190 countries; find out how you can prepare for an exciting career as a diplomat or foreign service officer."},
+    {"servicename": "Health Care", "brief": "Find out about nursing, primary care, long-term care and more."},
+    {"servicename": "Health Care careers", "brief": "Explore your options as a specialist, therapist, nurse and more in the exciting healthcare field."},
+    {"servicename": "Human Resources Specialists", "brief": "Human resources assistants keep records of a company's employees and answer questions for employees."},
+    {"servicename": "Insect Conservation", "brief": "Entomological Conservation Biologist", "brief": "Forces of Change", "brief": "Learn about Terry Erwin's work with insects."},
+    {"servicename": "Information Technology Learn more about careers supporting, programming, building and fixing computers and networks."},
+    {"servicename": "Judge", "brief": "Judges are in charge of trials; they make sure that trials are fair and they resolve differences between lawyers."},
+    {"servicename": "Junior Achievement", "brief": "Student Center", "brief": "You've got quite a life in front of you. Much of it will be spent working. That's good news, because working in your chosen career field can be awesome."},
+    {"servicename": "Landscape Architect", "brief": "Learn more about the work landscape architects do."},
+    {"servicename": "Lawyer", "brief": "Lawyers give advice and represent people, businesses, or government agencies in court about legal issues."},
+    {"servicename": "Librarian", "brief": "Librarians help people find facts. They organize information and help people find books, magazines, videos, websites, and other information."},
+    {"servicename": "Loan Officer", "brief": "Loan officers help people apply for loans; this lets people do things like buy a house or a car, or pay for college."},
+    {"servicename": "Marine Biologist", "brief": "Meet Chris Meyer, a scientist from the National Museum of Natural History. He talks about the ocean and his favorite animal the cowrie snail."},
+    {"servicename": "Marine Biology Careers", "brief": "Find the answers to your questions about how to become a marine biologist."},
+    {"servicename": "Marine Pilot", "brief": "Meet Captain Pete Benning. He talks about what it's like to be a pilot and how to prepare for a mission."},
+    {"servicename": "Marine Sciences", "brief": "Find out what it takes to have a career in marine sciences at one of the world's premier aquariums."},
+    {"servicename": "Marine Science Careers", "brief": "Find out what a Research Biologist, Marine Mammalogist, Ichthyology, Biological Oceanographers and more do on a daily basis."},
+    {"servicename": "Mathematicians", "brief": "Mathematicians use mathematical theory, computational techniques and the latest computer technology to solve economic, scientific, engineering, physics, and business problems."},
+    {"servicename": "Museum Technicians and Conservators", "brief": "These people prepare objects, such as fossils or skeletal parts, for museum collections and exhibits. They also restore documents or install, arrange, and exhibit materials."},
+    {"servicename": "Museum Work: Put Your Skills on Exhibit", "brief": "Meet Pam Hatchfield, conservator. She goes to work and she's helping to preserve a little piece of history."},
+    {"servicename": "Musician", "brief": "Musicians and singers compose, sing, and play music. They perform solo or as part of a group. They perform in sound studios and on stage."},
+    {"servicename": "NASA Careers", "brief": "Fnd out more about a career in space science."},
+    {"servicename": "NASA Specialists", "brief": "Find career information featuring different NASA Specialists that include job description and areas of expertise."},
+    {"servicename": "NASA Women", "brief": "There are many math, science, and technology careers for women at NASA, and at this you can read profiles of NASA experts about their work days."},
+    {"servicename": "Nurse", "brief": "Nurses, also called registered nurses or RNs, take care of sick and injured people. They give medicine, treat wounds and give emotional support to patients and their families."},
+    {"servicename": "Nutritionist", "brief": "Meet Sasha, a registered dietitian nutritionist for the U.S. Department of Agriculture. She talks about how her job helps people eat healthy foods and teaches families how to keep track of what they're eating."},
+    {"servicename": "Oceanographer", "brief": "Meet Pablo Clemente-Colón. He is the chief scientist and oceanographer at the National Ice Center."},
+    {"servicename": "Oceanographer", "brief": "Forces of Change", "brief": "Meet David Adamec. He's a physical oceanographer who has pioneered a new way of seeing the ocean."},
+    {"servicename": "Oceanographers", "brief": "National Ocean Service", "brief": "Oceanography covers a wide range of topics, including marine life and ecosystems, ocean circulation and the chemical and physical properties of the ocean; learn more about careers in this field."},
+    {"servicename": "Outdoor Careers", "brief": "Conservation Connect", "brief": "Video series that connects you with the great outdoors, wildlife species, and careers in protecting the environment."},
+    {"servicename": "Paralegal", "brief": "Paralegals, or legal assistants, help lawyers in their work. They investigate cases to make sure that lawyers know all of the important facts."},
+    {"servicename": "Park Ranger", "brief": "Rangers help protect parks and teach park visitors why parks are important and how to care for them."},
+    {"servicename": "Peace Corps", "brief": "Learn About Volunteering", "brief": "Learn about the work and requirements for six program areas: education, youth and community development, health, business and information and communications technology, agriculture, and environment."},
+    {"servicename": "Peace Corps Volunteers", "brief": "Meet Laura and Rob Gray, former Peace Corps Volunteers. They talk about their experience in Zambia."},
+    {"servicename": "Pharmacist", "brief": "Pharmacists are experts in medicine and its side effects."},
+    {"servicename": "Photographer", "brief": "Photographers know how to choose the right tools to get the best picture. They use lights and lenses to create a picture."},
+    {"servicename": "Physical Therapists", "brief": "Meet 3 physical therapists at Walter Reed National Military Medical Center and learn how they help patients."},
+    {"servicename": "Physician (Doctor)", "brief": "Doctors treat injuries and sick patients. Doctors examine patients, find out patient's medical histories and give medications."},
+    {"servicename": "Physicist and Astronomers", "brief": "Physicists study the natural world, from what things are made of (matter) to how things behave; learn more about a career as a physicist."},
+    {"servicename": "Pilot", "brief": "Pilots fly people or cargo from place to place. Some pilots test new planes, fight fires, do police work, or rescue people who are hurt or in danger."},
+    {"servicename": "Pilot", "brief": "Find out more about aviation careers including becoming a pilot."},
+    {"servicename": "Pilot for the Marines", "brief": "Meet Captain Pete Benning. He talks about what it's like to be a pilot and how to prepare for a mission."},
+    {"servicename": "Plant Specialist", "brief": "Botanist", "brief": "Meet Martin, who is the manager of Yosemite National Park's plant program."},
+    {"servicename": "Police Officer", "brief": "Police officers and detectives enforce laws. They catch criminals, collect evidence and testify in court."},
+    {"servicename": "Principal -Elementary, middle, and high school principals coordinate curricula, oversee teachers and other school staff, and provide a safe and productive learning environment for students."},
+    {"servicename": "Prosthetist", "brief": "Meet David.  He works with patients with amputated limbs. He talks about what he likes about his job and how a prosthetic arm and leg are created."},
+    {"servicename": "Psychologist", "brief": "Psychologists study the human mind. They also try to explain why people act as they do. They do research to test their ideas about people's actions."},
+    {"servicename": "Rare Book Conservator", "brief": "Meet Yasmeen Khan. She helps restore old books at the Library of Congress in Washington DC."},
+    {"servicename": "Real Estate Agent", "brief": "Real estate agents help people buy and sell houses."},
+    {"servicename": "Recreational Therapist", "brief": "Recreational therapists help people who are sick or hurt to get active again. They use sports, games, arts, crafts, and music to help patients."},
+    {"servicename": "Reporter", "brief": "Reporters gather information and write news stories. These stories appear in newspapers, magazines television and online."},
+    {"servicename": "Research Chef", "brief": "Research chefs create new foods for restaurant chains, coffee shops, and food manufacturing companies. They use both culinary training and knowledge of food science."},
+    {"servicename": "Restaurant Careers", "brief": "Learn about four careers: cooks, executive chefs, servers, and bartenders."},
+    {"servicename": "Science Careers at the National Institute of Health", "brief": "If youre curious, like numbers, and like to know how things work maybe you should become a scientist!"},
+    {"servicename": "Scientists", "brief": "Brain Scientist", "brief": "Meet Doctor Dave, a scientist who studies the brain and how addiction affects the brain."},
+    {"servicename": "Scientists @ the Smithsonian", "brief": "Meet different scientists including animal specialists, space scientists and more."},
+    {"servicename": "Sea Career Profiles", "brief": "Find career profiles of jobs studying the ocean and atmosphere including marine biology, meteorology and more with corresponding lesson plans."},
+    {"servicename": "Secretary", "brief": "Secretaries make appointments, take notes, write letters and answer the phone."},
+    {"servicename": "Social Worker", "brief": "Social workers help people overcome problems and make their lives better. They work with people who are homeless, sick, or having family problems."},
+    {"servicename": "Space Jobs", "brief": "Space Place Live", "brief": "Meet real scientists who work on space projects to find out what its like to work as a scientist or engineer."},
+    {"servicename": "Statistician", "brief": "Statisticians help to design surveys and experiments; they also collect, analyze, and interpret numerical data."},
+    {"servicename": "Surveyor", "brief": "Surveyors do different types of work", "brief": "some measure land, air space, and water areas", "brief": "some describe where a certain area of land is."},
+    {"servicename": "Systems Analyst", "brief": "These workers figure out how to use computers to get things done. They tell businesses and other organizations which computers and software to buy, and they decide how to get those tools to work together."},
+    {"servicename": "Teacher", "brief": "Educates and prepares students for future schooling by teaching them a variety of subjects like math, science, and reading."},
+    {"servicename": "Television Jobs", "brief": "Learn more about the jobs of the camera operators, directors, producers, and technicians at a television station."},
+    {"servicename": "Theater Jobs", "brief": "Find out about what it takes to work in theater, including actors, playwrights, directors, costumers and more."},
+    {"servicename": "Veterinarian", "brief": "Megan talks about her job with working dogs and why your dog's teeth need to stay healthy."},
+    {"servicename": "Veterinarians at Work", "brief": "Over 3000 veterinarians work for the federal government. Federal veterinarians also have important jobs with the NASA, the Food and Drug Administration and the Center for Veterinary Medicine."},
+    {"servicename": "Volunteer", "brief": "Catch the Spirit: A Student's Guide to Community Service", "brief": "Ideas and information on how teens can help make their community a better place. (PDF)"},
+    {"servicename": "Web Developer", "brief": "web developers use information technology (IT) to advance their companys goals."},
+    {"servicename": "Wildlife Biologist", "brief": "Wildlife biologists study animals and other wildlife and how they interact with their environment. Learn about what it takes to be a wildlife biologist and how to protect wildlife animals."},
+    {"servicename": "Wildlife Officer", "brief": "Meet Gabriel. He is an officer that protects wildlife for the U.S. Fish and Wildlife Service. Learn about his tools and what he does on patrol."},
+    {"servicename": "Working at the San Diego Zoo", "brief": "There are so many jobs you can do at the zoo. Learn about working with animals, plants, science, conservation, and much, much more."},
+    {"servicename": "Working for the Great Outdoors", "brief": "A Day In The Life", "brief": "Take a closer look at just what it's like on the job for people of the Forest Service."},
+    {"servicename": "Writer", "brief": "Writers write stories or they write about things that really happened. They write books, articles and they write for radio and television."},
+    {"servicename": "Youth Engagement Through Science (YES) Program", "brief": "Meet student interns from the YES Program, part of the Smithsonian Institution. Students get to work in museums and get hands-on experience, working with scientists, educators and researchers."},
+    {"servicename": "Zoo Keepers", "brief": "Meet Kristen and Juan, zoo keepers at the National Zoo. They talk about creating natural habitats, how they train the animals and what you can do to get started."}
+  ]
 }
-Accountant - Accountants and auditors keep track of a company's money; managers look at the accountants' reports to see how well their companies are doing.
-Actor - Actors perform in stage, radio, television, video, or motion pictures. It's hard for most actors to find steady work. Only a few become famous "stars." They also teach in high school or college drama departments, acting conservatories, or public programs.
-Actuary - Actuaries deal with risk; they decide how likely things such as death, sickness and disability are to occur, as well as the costs of these things.
-Air Traffic Controller - Video explains what controllers do and how they direct planes at the airport.
-Animal Keeper - Juan is an animal keeper of the Asia Trail at the National Zoo. He talks about his daily duties and sloth bears.
-Announcers - Announcers, sometimes called deejays, present music, news, and sports and may provide commentary or interview guests about these topics or other important events.
-Aquarium Curator and Herpetologist - Find out what it's like being in charge of  an aquarium and working with reptiles and amphibians.
-Archeologists - Joy and Kate are archeologists from the National Park Service. In this video, they talk about the tools they use and what they uncovered.
-Archeologists - Archeologists work by digging into sites and collections. When they excavate, archeologists use tools you might recognize.
-Archeology and Anthropology Career Guide - Anthropology is the study of human beings and it helps us to understand how cultures are different or alike and how they have changed. Archeology is the study of past human cultures. Learn more about a careers in anthropology and archeology.
-Architect - Tony is an architect at the General Services Administration. He talks about saving energy and how he became an architect.
-Army DentistMeet Captain Ryan Romero.  He talks about being a dentist and how to take care of your teeth.Army Dentist - Meet Captain Ryan.  He talks about being a dentist and how to take care of your teeth.
-Artist - Artists make art to express what they are feeling or thinking. They use many methods - drawing, painting, sculpting, even computers.
-Astronaut - Meet Kay. She talks about the space program and how she became an astronaut.
-Athlete - Professional athletes include baseball, football, basketball, and tennis players; golfers, ice skaters, skiers, stock car drivers, and rodeo riders: anyone playing a sport for money.
-Aviation Careers - Learn about careers that involve airplanes including air traffic controllers, airplane mechanics, flight attendants and more careers in aviation.
-B
-
-Bird Specialist - Ornithologist - Sarah Stock is a wildlife biologist who studies birds. She talks about how she studies owls.
-Bookkeeping Clerk - Any organization that uses money has to keep records - records of where money came from and where it went; bookkeeping clerks keep and track these financial records.
-Brain Scientist - Meet Doctor Dave, a scientist who studies the brain and how addiction affects the brain.
-Budget Analyst - Budget analysts help public and private companies organize their finances. They prepare budget reports and monitor spending.
-C
-
-Car Mechanic - Automotive service technicians and mechanics fix cars or light trucks.
-Career Advice - Students and Career Advisors - Tools to help you identify your interests, find careers that match your talents, explore education options and more.
-Career Videos - CareerOneStop - Find videos about 550 different jobs.
-Carpenter - Carpenters build many things from wood and other materials, like buildings and boats. They construct, erect, install, and repair structures and other fixtures.
-Chefs and Head Cooks - Chefs and head cooks oversee the daily food service operation of a restaurant or other food service establishment.
-Chef at the White House - Meet Cris Comerford and find out about her job as an executive chef at the White House.
-Chemist - Find out about a career in chemistry.
-Childcare Worker - Childcare workers teach and care for children while their parents are away. They play games, do art, and read books.
-CIA Museum: The People Behind the Magic - Meet the people that make exhibits come to life and are the staff of the CIA Museum.
-City (Urban) Planner - City (urban) planners figure out the best way to use the land in cities and neighborhoods; they report on the best location for houses, stores, and parks.
-Civil Engineer - Civil engineers design things like roads, buildings, airports, tunnels, dams, bridges, or water supply and sewage systems.
-Climate Science - Learn about green jobs in recycling,renewable energy, engineering and earth science that monitor and help the planet.
-Coach - Coaches help people learn how to play a sport. They start by teaching them the basics and the proper form and technique.
-Coder - Learn Coding and Build a Future - Meet Elaine, a Front-End Developer at the General Services Administration and find out more about how you can start learning to code now!
-Community Service - Catch the Spirit - Ideas and information on how teens can help make their community a better place. (PDF)
-Computer Hardware Engineer - Computer hardware engineers research, design, develop, test, and oversee the installation of computer hardware.
-Computer Information Technology Learn more about careers supporting, programming, building and fixing computers and networks.
-Computer Software Developer - Computer software engineers apply computer science, engineering, and math to design, develop, and test software.
-Computer Support Specialist - Computer support specialists help people use computers.
-Cost Estimator - Cost estimators figure out how much a project or product will cost; this helps business owners and managers decide whether to build a structure or manufacture a product.
-Curators, Museum Technicians and Conservators - Experts preserving important records and artifacts, including works of art, documents, photographs, coins and historic objects.
-D
-
-Dancer - Dancers express ideas, stories, rhythm, and sound with their bodies. Dancers work in musical shows, in folk, ethnic, tap, and jazz dances.
-Database Administrator - Data must be stored, organized, and managed. Database administrators work with database software to find ways to do this.
-Dentist - Meet Captain Ryan Romero.  He talks about being a dentist and how to take care of your teeth.
-Designer - Designers have a desire to create; they mix knowledge with artistic ability. Designers focus in a specific area of design, such as cars or websites.
-Desktop Publisher - Using computers, these workers combine printed materials, numbers, pictures, and charts to prepare publications and booklets.
-Developer - Meet Elaine, a website developer with the General Services Administration. She helps make the government easy and available to everyone online.
-Diplomat - Careers at the State Department - Do you find the life of a diplomat interesting but don't know where to begin? You may just find what you're looking for.
-Discovering Your Interests and Talents - GirlsHealth.gov - Taking the time to think about your interests and abilities is the first step toward discovering what it is you want to do now or even later when you become an adult.
-Doctor (Physician) - Doctors treat injuries and sick patients. Doctors examine patients, find out patient's medical histories and give medications.
-Dog Doctors - Choosing A Veterinary Career - What are the duties of a veterinarian? Find out the answers.
-Dog Trainer - Meet Bridget. She's a canine handler with U.S. Customs and Border Protection. She trains dogs to search and find illegal drugs.
-Drafter - Drafters make drawings and plans; some plans show how to make objects like toys, toasters, and machinery or larger things like houses and office buildings.
-E
-
-Earth Science Careers - Learn more about earth science careers.
-Electrical Engineer - Electrical engineers design new and better electronics; they also test equipment and solve problems.
-Electrician - Electricians bring us electricity. They put in the wires that carry electricity through houses, offices, and factories; they also fix electric machines.
-Engineering - Math, science and technology are as varied as they are exciting; find out more about the different fields in engineering.
-Engineer Girl! - At this cool site you can check out fun facts, learn about women in engineering and what you need to know to become one.
-Engineering Technician - Learn what engineering technicians do and how they help engineers and scientists do research and development.
-Environmentally-Focused Jobs - EEK! - Career Zone - Want a job that involves helping take care of our planet? Check out these careers.
-Environmental Scientist - Environmental scientists find and fix pollution and other environmental problems by figuring out what is in the air, water, and soil to make sure that our environment is safe.
-F
-
-Farmer - Farmers grow crops and raise animals; they decide when to plant, fertilize, harvest, and sell crops.
-Fashion Designer - Fashion designers help create dresses, suits, shoes, and other clothing and accessories. Designers study fashion trends, sketch designs of clothing and accessories, select colors and fabrics, and oversee the final production of their designs.
-FBI Fitness Instructor - Meet E.J. He talks about teaching at the FBI Academy and why you should keep moving.
-FBI Investigator - Special Agents have been investigating and catching spies for over 60 years! A spy is a person who keeps secret watch on another person or thing to get information.
-Federal Wildlife Officer - Meet Gabriel. He is an officer that protects wildlife for the U.S. Fish and Wildlife Service. Learn about his tools and what he does on patrol.
-Financial Analyst - Financial analysts help people decide how to invest their money.
-Fire Archeologist - A fire archeologist provides information on vulnerable plant or animal species, or cultural resources--before, during and after wildland fire incidents and prescribed burns.
-Firefighter - Firefighters put out fires, which is not as simple as it may sound. Fighting fires is dangerous and complex, and it takes organization and teamwork.
-Fish Specialist - Marine Biologist - Meet Carole. She specializes in studying tropical-marine and deep-sea fish and wildlife.
-Fitness Trainers and Instructors - Trainers plan and teach activities that people of all ages enjoy in their free time. This may include camping, sports, arts and crafts, dance, or drama.
-Food Scientist - Agricultural and food scientists look for the answers to questions about how farms can use less labor, control pests and weeds, conserve soil and water.
-Foreign Service Officer - Future State - U.S. Department of State for Youth - The State Department has embassies in more than 190 countries; find out how you can prepare for an exciting career as a diplomat or foreign service officer.
-H
-
-Health Care - Find out about nursing, primary care, long-term care and more.
-Health Care careers - Explore your options as a specialist, therapist, nurse and more in the exciting healthcare field.
-Human Resources Specialists - Human resources assistants keep records of a company's employees and answer questions for employees.
-I
-
-Insect Conservation - Entomological Conservation Biologist - Forces of Change - Learn about Terry Erwin's work with insects.
-Information Technology Learn more about careers supporting, programming, building and fixing computers and networks.
-J
-
-Judge - Judges are in charge of trials; they make sure that trials are fair and they resolve differences between lawyers.
-Junior Achievement - Student Center - You've got quite a life in front of you. Much of it will be spent working. That's good news, because working in your chosen career field can be awesome.
-L
-
-Landscape Architect - Learn more about the work landscape architects do.
-Lawyer - Lawyers give advice and represent people, businesses, or government agencies in court about legal issues.
-Librarian - Librarians help people find facts. They organize information and help people find books, magazines, videos, websites, and other information.
-Loan Officer - Loan officers help people apply for loans; this lets people do things like buy a house or a car, or pay for college.
-M
-
-Marine Biologist - Meet Chris Meyer, a scientist from the National Museum of Natural History. He talks about the ocean and his favorite animal the cowrie snail.
-Marine Biology Careers - Find the answers to your questions about how to become a marine biologist.
-Marine Pilot - Meet Captain Pete Benning. He talks about what it's like to be a pilot and how to prepare for a mission.
-Marine Sciences - Find out what it takes to have a career in marine sciences at one of the world's premier aquariums.
-Marine Science Careers - Find out what a Research Biologist, Marine Mammalogist, Ichthyology, Biological Oceanographers and more do on a daily basis.
-Mathematicians - Mathematicians use mathematical theory, computational techniques and the latest computer technology to solve economic, scientific, engineering, physics, and business problems.
-Museum Technicians and Conservators - These people prepare objects, such as fossils or skeletal parts, for museum collections and exhibits. They also restore documents or install, arrange, and exhibit materials.
-Museum Work: Put Your Skills on Exhibit - Meet Pam Hatchfield, conservator. She goes to work and she's helping to preserve a little piece of history.
-Musician - Musicians and singers compose, sing, and play music. They perform solo or as part of a group. They perform in sound studios and on stage.
-N
-
-NASA Careers - Fnd out more about a career in space science.
-NASA Specialists - Find career information featuring different NASA Specialists that include job description and areas of expertise.
-NASA Women - There are many math, science, and technology careers for women at NASA, and at this you can read profiles of NASA experts about their work days.
-Nurse - Nurses, also called registered nurses or RNs, take care of sick and injured people. They give medicine, treat wounds and give emotional support to patients and their families.
-Nutritionist - Meet Sasha, a registered dietitian nutritionist for the U.S. Department of Agriculture. She talks about how her job helps people eat healthy foods and teaches families how to keep track of what they're eating.
-O
-
-Oceanographer - Meet Pablo Clemente-Colón. He is the chief scientist and oceanographer at the National Ice Center.
-Oceanographer - Forces of Change - Meet David Adamec. He's a physical oceanographer who has pioneered a new way of seeing the ocean.
-Oceanographers - National Ocean Service - Oceanography covers a wide range of topics, including marine life and ecosystems, ocean circulation and the chemical and physical properties of the ocean; learn more about careers in this field.
-Outdoor Careers - Conservation Connect - Video series that connects you with the great outdoors, wildlife species, and careers in protecting the environment.
-P
-
-Paralegal - Paralegals, or legal assistants, help lawyers in their work. They investigate cases to make sure that lawyers know all of the important facts.
-Park Ranger - Rangers help protect parks and teach park visitors why parks are important and how to care for them.
-Peace Corps - Learn About Volunteering - Learn about the work and requirements for six program areas: education, youth and community development, health, business and information and communications technology, agriculture, and environment.
-Peace Corps Volunteers - Meet Laura and Rob Gray, former Peace Corps Volunteers. They talk about their experience in Zambia.
-Pharmacist - Pharmacists are experts in medicine and its side effects.
-Photographer - Photographers know how to choose the right tools to get the best picture. They use lights and lenses to create a picture.
-Physical Therapists - Meet 3 physical therapists at Walter Reed National Military Medical Center and learn how they help patients.
-Physician (Doctor) - Doctors treat injuries and sick patients. Doctors examine patients, find out patient's medical histories and give medications.
-Physicist and Astronomers - Physicists study the natural world, from what things are made of (matter) to how things behave; learn more about a career as a physicist.
-Pilot - Pilots fly people or cargo from place to place. Some pilots test new planes, fight fires, do police work, or rescue people who are hurt or in danger.
-Pilot - Find out more about aviation careers including becoming a pilot.
-Pilot for the Marines - Meet Captain Pete Benning. He talks about what it's like to be a pilot and how to prepare for a mission.
-Plant Specialist - Botanist - Meet Martin, who is the manager of Yosemite National Park's plant program.
-Police Officer - Police officers and detectives enforce laws. They catch criminals, collect evidence and testify in court.
-Principal -Elementary, middle, and high school principals coordinate curricula, oversee teachers and other school staff, and provide a safe and productive learning environment for students.
-Prosthetist - Meet David.  He works with patients with amputated limbs. He talks about what he likes about his job and how a prosthetic arm and leg are created.
-Psychologist - Psychologists study the human mind. They also try to explain why people act as they do. They do research to test their ideas about people's actions.
-R
-
-Rare Book Conservator - Meet Yasmeen Khan. She helps restore old books at the Library of Congress in Washington DC.
-Real Estate Agent - Real estate agents help people buy and sell houses.
-Recreational Therapist - Recreational therapists help people who are sick or hurt to get active again. They use sports, games, arts, crafts, and music to help patients.
-Reporter - Reporters gather information and write news stories. These stories appear in newspapers, magazines television and online.
-Research Chef - Research chefs create new foods for restaurant chains, coffee shops, and food manufacturing companies. They use both culinary training and knowledge of food science.
-Restaurant Careers - Learn about four careers: cooks, executive chefs, servers, and bartenders.
-S
-
-Science Careers at the National Institute of Health - If youre curious, like numbers, and like to know how things work maybe you should become a scientist!
-Scientists - Brain Scientist - Meet Doctor Dave, a scientist who studies the brain and how addiction affects the brain.
-Scientists @ the Smithsonian - Meet different scientists including animal specialists, space scientists and more.
-Sea Career Profiles - Find career profiles of jobs studying the ocean and atmosphere including marine biology, meteorology and more with corresponding lesson plans.
-Secretary - Secretaries make appointments, take notes, write letters and answer the phone.
-Social Worker - Social workers help people overcome problems and make their lives better. They work with people who are homeless, sick, or having family problems.
-Space Jobs - Space Place Live - Meet real scientists who work on space projects to find out what its like to work as a scientist or engineer.
-Statistician - Statisticians help to design surveys and experiments; they also collect, analyze, and interpret numerical data.
-Surveyor - Surveyors do different types of work - some measure land, air space, and water areas - some describe where a certain area of land is.
-Systems Analyst - These workers figure out how to use computers to get things done. They tell businesses and other organizations which computers and software to buy, and they decide how to get those tools to work together.
-T
-
-Teacher - Educates and prepares students for future schooling by teaching them a variety of subjects like math, science, and reading.
-Television Jobs - Learn more about the jobs of the camera operators, directors, producers, and technicians at a television station.
-Theater Jobs - Find out about what it takes to work in theater, including actors, playwrights, directors, costumers and more.
-V
-
-Veterinarian - Megan talks about her job with working dogs and why your dog's teeth need to stay healthy.
-Veterinarians at Work - Over 3000 veterinarians work for the federal government. Federal veterinarians also have important jobs with the NASA, the Food and Drug Administration and the Center for Veterinary Medicine.
-Volunteer - Catch the Spirit: A Student's Guide to Community Service - Ideas and information on how teens can help make their community a better place. (PDF)
-W
-
-Web Developer - web developers use information technology (IT) to advance their companys goals.
-Wildlife Biologist - Wildlife biologists study animals and other wildlife and how they interact with their environment. Learn about what it takes to be a wildlife biologist and how to protect wildlife animals.
-Wildlife Officer - Meet Gabriel. He is an officer that protects wildlife for the U.S. Fish and Wildlife Service. Learn about his tools and what he does on patrol.
-Working at the San Diego Zoo - There are so many jobs you can do at the zoo. Learn about working with animals, plants, science, conservation, and much, much more.
-Working for the Great Outdoors - A Day In The Life - Take a closer look at just what it's like "on the job" for people of the Forest Service.
-Writer - Writers write stories or they write about things that really happened. They write books, articles and they write for radio and television.
-Y
-
-Youth Engagement Through Science (YES) Program - Meet student interns from the YES Program, part of the Smithsonian Institution. Students get to work in museums and get hands-on experience, working with scientists, educators and researchers.
-Z
-
-Zoo Keepers - Meet Kristen and Juan, zoo keepers at the National Zoo. They talk about creating natural habitats, how they train the animals and what you can do to get started.
