@@ -44,9 +44,38 @@ module.exports = function(Searchengine) {
         http: {verb: 'get'}
   });
 
+  ///////////////////////////////// General search
   Searchengine.general = function(searchText, cb) {
-      var result = {testField : "testmessage"};
-      cb(null, result);
+      const elasticsearch = require('elasticsearch');
+      const esClient = new elasticsearch.Client({
+        host: '127.0.0.1:9200',
+        log: 'error'
+      });
+
+      let body = {
+        size: 100,
+        from: 0,
+        query: {
+          multi_match: {
+            query: searchText,
+            type: "phrase_prefix",
+            fields: ['username', 'fullname', 'servicename']
+          }
+        }
+      };
+
+      console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
+      search('test', ['Profiles', 'Categories'], body)
+      .then(results => {
+        console.log(`found ${results.hits.total} items in ${results.took}ms`);
+        if (results.hits.total > 0) console.log(`returned results:`);
+        cb(null, results.hits.hits);
+        results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - (score: ${hit._score})`));
+      })
+    .catch(reason => {
+      console.error;
+      cb(null, []);
+    })
   };
 
   Searchengine.remoteMethod('general', {
@@ -55,9 +84,38 @@ module.exports = function(Searchengine) {
         http: {verb: 'get'}
   });
 
+  ///////////////////////////////// Search Experts
   Searchengine.experts = function(searchText, maxId, count, cb) {
-      var result = {testField : "testmessage"};
-      cb(null, result);
+      const elasticsearch = require('elasticsearch');
+      const esClient = new elasticsearch.Client({
+        host: '127.0.0.1:9200',
+        log: 'error'
+      });
+
+      let body = {
+        size: count,
+        from: maxId,
+        query: {
+          multi_match: {
+            query: searchText,
+            type: "phrase_prefix",
+            fields: ['username', 'fullname']
+          }
+        }
+      };
+
+      console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
+      search('test', 'Profiles', body)
+      .then(results => {
+        console.log(`found ${results.hits.total} items in ${results.took}ms`);
+        if (results.hits.total > 0) console.log(`returned results:`);
+        cb(null, results.hits.hits);
+        results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - user: ${hit._source.username} - fullname: ${hit._source.fullname} (score: ${hit._score})`));
+      })
+    .catch(reason => {
+      console.error;
+      cb(null, []);
+    })
   };
 
   Searchengine.remoteMethod('experts', {
@@ -70,9 +128,38 @@ module.exports = function(Searchengine) {
         http: {verb: 'get'}
   });
 
+  ///////////////////////////////// Search Categories
   Searchengine.categories = function(searchText, maxId, count, cb) {
-      var result = {testField : "testmessage"};
-      cb(null, result);
+      const elasticsearch = require('elasticsearch');
+      const esClient = new elasticsearch.Client({
+        host: '127.0.0.1:9200',
+        log: 'error'
+      });
+
+      let body = {
+        size: count,
+        from: maxId,
+        query: {
+          multi_match: {
+            query: searchText,
+            type: "phrase_prefix",
+            fields: ['servicename']
+          }
+        }
+      };
+
+      console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
+      search('test', 'Categories', body)
+      .then(results => {
+        console.log(`found ${results.hits.total} items in ${results.took}ms`);
+        if (results.hits.total > 0) console.log(`returned results:`);
+        cb(null, results.hits.hits);
+        results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - service: ${hit._source.sevicename} (score: ${hit._score})`));
+      })
+    .catch(reason => {
+      console.error;
+      cb(null, []);
+    })
   };
 
   Searchengine.remoteMethod('categories', {
