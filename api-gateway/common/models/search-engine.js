@@ -1,18 +1,18 @@
 'use strict';
 
 const elasticsearch = require('elasticsearch');
-
+var hostElastic = '127.0.0.1:9201';
 module.exports = function(Searchengine) {
   Searchengine.test = function(searchText, cb) {
     var esClient = new elasticsearch.Client({
-      host: '127.0.0.1:9200',
+      host: hostElastic,
       log: 'error'
     });
 
     var search = function search(index, body) {
       return esClient.search({index: index, body: body});
     };
-    let body = {
+    var body = {
       size: 20,
       from: 0,
       query: {
@@ -48,11 +48,13 @@ module.exports = function(Searchengine) {
   Searchengine.general = function(searchText, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
-        host: '127.0.0.1:9200',
+        host: hostElastic,
         log: 'error'
       });
-
-      let body = {
+      const search = function search(index, type, body) {
+        return esClient.search({index: index, type: type, body: body});
+      };
+      var body = {
         size: 100,
         from: 0,
         query: {
@@ -88,11 +90,15 @@ module.exports = function(Searchengine) {
   Searchengine.experts = function(searchText, maxId, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
-        host: '127.0.0.1:9200',
+        host: hostElastic,
         log: 'error'
       });
 
-      let body = {
+      const search = function search(index, type, body) {
+        return esClient.search({index: index, type: type, body: body});
+      };
+
+      var body = {
         size: count,
         from: maxId,
         query: {
@@ -101,10 +107,13 @@ module.exports = function(Searchengine) {
             type: "phrase_prefix",
             fields: ['username', 'fullname']
           }
+        },
+        filter: {
+          term: {isExpert: true}
         }
       };
 
-      console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
+      //console.log(`retrieving documents whose username or fullname or servicename match '${body.query.bool.must[0].match_phrase}' (displaying ${body.size} items at a time)...`);
       search('test', 'Profiles', body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
@@ -132,9 +141,13 @@ module.exports = function(Searchengine) {
   Searchengine.categories = function(searchText, maxId, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
-        host: '127.0.0.1:9200',
+        host: hostElastic,
         log: 'error'
       });
+
+      const search = function search(index, type, body) {
+        return esClient.search({index: index, type: type, body: body});
+      };
 
       let body = {
         size: count,

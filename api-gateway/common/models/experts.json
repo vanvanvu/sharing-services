@@ -12,7 +12,7 @@
   },
   "validations": [],
   "relations": {
-    "User": {
+    "Profile": {
       "type": "belongsTo",
       "model": "Profiles",
       "foreignKey": "profileId"

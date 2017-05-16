@@ -8,7 +8,7 @@
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
-    "async": "^2.3.0",
+    "async": "^2.4.0",
     "braintree": "^2.0.2",
     "compression": "^1.0.3",
     "cors": "^2.5.2",

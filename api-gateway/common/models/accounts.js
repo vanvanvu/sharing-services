@@ -61,10 +61,13 @@ module.exports = function(Accounts) {
       account.profiles(function (err, profile) {
         if (err) {
           console.log(err);
+          next(err);
           return;
         }
-        if (profile !== null)
+        if (profile !== null) {
+          next();
           return;
+        }
         var data = {
           username: account.username,
           fullname: "",
@@ -76,12 +79,14 @@ module.exports = function(Accounts) {
         account.profiles.create(data, function(err, data) {
           if (err) {
             console.log(err);
+            next(err);
+            return;
           }
           console.log(data);
+          next();
           }
         );
       });
     }
-    next();
   });
 };

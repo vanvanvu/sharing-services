@@ -42,11 +42,6 @@
       "type": "hasOne",
       "model": "Experts",
       "foreignKey": "profileId"
-    },
-    "accounts": {
-      "type": "belongsTo",
-      "model": "Accounts",
-      "foreignKey": "accountId"
     }
   },
   "acls": [],
