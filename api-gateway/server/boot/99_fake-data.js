@@ -3,11 +3,13 @@ var fs=require('fs');
 var async = require('async');
 
 module.exports = function(app) {
-/*  var Accounts = app.models.Accounts;
+  var Accounts = app.models.Accounts;
   var Profiles = app.models.profiles;
 
   var data = fs.readFileSync('fake_data/fakedata_userlist.json');
   var jsonObj = JSON.parse(data);
+  var serviceList = fs.readFileSync('fake_data/fakedata_servicelist.json');
+  var jsonObjServiceList = JSON.parse(serviceList);
 
   var addNewAccount = function (dataEntry, cb) {
     Accounts.findOrCreate({where: {email: dataEntry.email}}, dataEntry)
@@ -32,8 +34,10 @@ module.exports = function(app) {
       })
       .then (function (data3) {
         var expert = data3;
+        var idx = Math.floor((Math.random() * (jsonObjServiceList.services.length - 1)) + 0);
         var ser = {
-          servicename: ("service-" + dataEntry.username)
+          servicename: jsonObjServiceList.services[idx].servicename,
+          brief: jsonObjServiceList.services[idx].brief
         };
         return expert.Service.create(ser);
       })
@@ -57,6 +61,6 @@ module.exports = function(app) {
 
   async.eachLimit(datas, 1, addNewAccount, function (err) {
 
-  });*/
+  });
 };
 
