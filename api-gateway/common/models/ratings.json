@@ -1,5 +1,5 @@
 {
-  "name": "Ratings",
+  "name": "ratings",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -23,7 +23,7 @@
   "relations": {
     "experts": {
       "type": "belongsTo",
-      "model": "Experts",
+      "model": "experts",
       "foreignKey": "expertId"
     }
   },

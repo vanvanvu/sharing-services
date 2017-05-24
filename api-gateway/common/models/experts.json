@@ -1,5 +1,5 @@
 {
-  "name": "Experts",
+  "name": "experts",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -12,24 +12,24 @@
   },
   "validations": [],
   "relations": {
-    "Profile": {
+    "profile": {
       "type": "belongsTo",
-      "model": "Profiles",
+      "model": "profiles",
       "foreignKey": "profileId"
     },
-    "Service": {
+    "service": {
       "type": "hasMany",
-      "model": "Categories",
+      "model": "categories",
       "foreignKey": "expertId"
     },
     "booking": {
       "type": "hasOne",
-      "model": "Bookings",
+      "model": "bookings",
       "foreignKey": "expertId"
     },
     "ratings": {
       "type": "hasMany",
-      "model": "Ratings",
+      "model": "ratings",
       "foreignKey": "expertId"
     }
   },

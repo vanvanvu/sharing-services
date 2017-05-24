@@ -3,9 +3,9 @@ var config = require('../../server/config.json');
 var path = require('path');
 var app = require('../../server/server');
 
-module.exports = function(Accounts) {
+module.exports = function(accounts) {
   //send verification email after registration
-/*  Accounts.afterRemote('create', function(context, user, next) {
+/*  accounts.afterRemote('create', function(context, user, next) {
     console.log('> user.afterRemote triggered');
 
     var options = {
@@ -37,12 +37,12 @@ module.exports = function(Accounts) {
   });*/
 
   //send password reset link when requested
-/*  Accounts.on('resetPasswordRequest', function(info) {
+/*  accounts.on('resetPasswordRequest', function(info) {
     var url = 'http://' + config.host + ':' + config.port + '/reset-password';
     var html = 'Click <a href="' + url + '?access_token=' +
         info.accessToken.id + '">here</a> to reset your password';
 
-    Accounts.app.models.Email.send({
+    accounts.app.models.Email.send({
       to: info.email,
       from: info.email,
       subject: 'Password reset',
@@ -53,7 +53,7 @@ module.exports = function(Accounts) {
     });
   });*/
 
-  Accounts.observe('after save', function filterProperties(ctx, next) {
+  accounts.observe('after save', function filterProperties(ctx, next) {
     //if (ctx.options && ctx.options.skipPropertyFilter) return next();
     if (ctx.instance && ctx.isNewInstance) {
       var account = ctx.instance;

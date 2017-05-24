@@ -1,5 +1,5 @@
 {
-  "name": "SearchEngine",
+  "name": "searchEngine",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {

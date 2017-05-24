@@ -8,8 +8,8 @@ var gateway = braintree.connect({
   privateKey: 'efb87f127fd21c8adef9b5474b544c1b'
 });
 
-module.exports = function(Payments) {
-  Payments.client_token = function(owner, cb) {
+module.exports = function(payments) {
+  payments.client_token = function(owner, cb) {
     gateway.clientToken.generate({}, function (err, response) {
       if (err) {
         console.log([err]);
@@ -21,12 +21,12 @@ module.exports = function(Payments) {
     });
   };
 
-  Payments.remoteMethod('client_token', {
+  payments.remoteMethod('client_token', {
         accepts: {arg: 'owner', type: 'string'},
         returns: {arg: 'clientToken', type: 'string'}
   });
 
-  Payments.transaction = function (nonceClient, cb) {
+  payments.transaction = function (nonceClient, cb) {
     var nonceFromTheClient = nonceClient;
     // Use payment method nonce here
     gateway.transaction.sale({
@@ -47,7 +47,7 @@ module.exports = function(Payments) {
     });
   };
 
-  Payments.remoteMethod('transaction', {
+  payments.remoteMethod('transaction', {
         accepts: {arg: 'nonceClient', type: 'string', require: true},
         returns: [
           {arg: 'result', type: 'object'}

@@ -3,7 +3,8 @@ var fs=require('fs');
 var async = require('async');
 
 module.exports = function(app) {
-  var Accounts = app.models.Accounts;
+  /*
+  var Accounts = app.models.accounts;
   var Profiles = app.models.profiles;
 
   var data = fs.readFileSync('fake_data/fakedata_userlist.json');
@@ -26,7 +27,7 @@ module.exports = function(app) {
         var item = {
           serviceCount: 0
         };
-        return ret.Expert.create(item);
+        return ret.expert.create(item);
       })
       .then (function (data5) {
         var expert = data5;
@@ -39,7 +40,7 @@ module.exports = function(app) {
           servicename: jsonObjServiceList.services[idx].servicename,
           brief: jsonObjServiceList.services[idx].brief
         };
-        return expert.Service.create(ser);
+        return expert.service.create(ser);
       })
       .then (function (data6) {
         cb();
@@ -62,5 +63,6 @@ module.exports = function(app) {
   async.eachLimit(datas, 1, addNewAccount, function (err) {
 
   });
+  */
 };
 

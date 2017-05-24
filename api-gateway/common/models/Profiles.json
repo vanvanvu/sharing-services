@@ -1,5 +1,5 @@
 {
-  "name": "Profiles",
+  "name": "profiles",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -35,12 +35,12 @@
   "relations": {
     "account": {
       "type": "belongsTo",
-      "model": "Accounts",
+      "model": "accounts",
       "foreignKey": "accountId"
     },
-    "Expert": {
+    "expert": {
       "type": "hasOne",
-      "model": "Experts",
+      "model": "experts",
       "foreignKey": "profileId"
     }
   },

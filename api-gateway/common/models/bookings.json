@@ -1,5 +1,5 @@
 {
-  "name": "Bookings",
+  "name": "bookings",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,7 +10,7 @@
   "relations": {
     "experts": {
       "type": "belongsTo",
-      "model": "Experts",
+      "model": "experts",
       "foreignKey": "expertId"
     }
   },

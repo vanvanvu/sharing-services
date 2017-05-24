@@ -36,38 +36,38 @@
   "Email": {
     "dataSource": "mongoDbs"
   },
-  "Experts": {
+  "experts": {
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Ratings": {
+  "ratings": {
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Payments": {
+  "payments": {
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Accounts": {
+  "accounts": {
     "dataSource": "mongoDbs",
     "public": true,
     "options": {
       "emailVerificationRequired": false
     }
   },
-  "Profiles": {
+  "profiles": {
     "dataSource": "mongoDbs",
     "public": true
   },
-  "Categories": {
+  "categories": {
     "dataSource": "mongoDbs",
     "public": true
   },
-  "SearchEngine": {
+  "searchEngine": {
     "dataSource": null,
     "public": true
   },
-  "Bookings": {
+  "bookings": {
     "dataSource": "mongoDbs",
     "public": true
   }

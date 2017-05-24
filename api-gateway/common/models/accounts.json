@@ -1,5 +1,5 @@
 {
-  "name": "Accounts",
+  "name": "accounts",
   "base": "User",
   "idInjection": true,
   "options": {
@@ -11,7 +11,7 @@
   "relations": {
     "profiles": {
       "type": "hasOne",
-      "model": "Profiles",
+      "model": "profiles",
       "foreignKey": "accountId"
     }
   },

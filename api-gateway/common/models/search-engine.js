@@ -1,51 +1,10 @@
 'use strict';
 
 const elasticsearch = require('elasticsearch');
-var hostElastic = '127.0.0.1:9201';
-module.exports = function(Searchengine) {
-  Searchengine.test = function(searchText, cb) {
-    var esClient = new elasticsearch.Client({
-      host: hostElastic,
-      log: 'error'
-    });
-
-    var search = function search(index, body) {
-      return esClient.search({index: index, body: body});
-    };
-    var body = {
-      size: 20,
-      from: 0,
-      query: {
-        multi_match: {
-          query: searchText,
-          type: 'phrase_prefix',
-          fields : [ "title", "journal" ]
-        }
-      }
-    };
-
-    console.log(`retrieving all documents (displaying ${body.size} at a time)...`);
-    search('library', body)
-    .then(results => {
-      console.log(`found ${results.hits.total} items in ${results.took}ms`);
-      console.log(`returned article titles:`);
-      cb(null, results.hits.hits);
-      results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - ${hit._source.title}`));
-    })
-    .catch(reason => {
-      console.error;
-      cb(null, []);
-    })
-  };
-
-  Searchengine.remoteMethod('test', {
-        accepts: {arg: 'searchText', type: 'string'},
-        returns: {arg: 'result', type: 'array'},
-        http: {verb: 'get'}
-  });
-
+var hostElastic = '127.0.0.1:9200';
+module.exports = function(searchEngine) {
   ///////////////////////////////// General search
-  Searchengine.general = function(searchText, cb) {
+  searchEngine.general = function(searchText, maxId, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -55,8 +14,8 @@ module.exports = function(Searchengine) {
         return esClient.search({index: index, type: type, body: body});
       };
       var body = {
-        size: 100,
-        from: 0,
+        size: count,
+        from: maxId,
         query: {
           multi_match: {
             query: searchText,
@@ -67,7 +26,7 @@ module.exports = function(Searchengine) {
       };
 
       console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
-      search('test', ['Profiles', 'Categories'], body)
+      search('test', ['profiles', 'categories'], body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);
@@ -80,14 +39,18 @@ module.exports = function(Searchengine) {
     })
   };
 
-  Searchengine.remoteMethod('general', {
-        accepts: {arg: 'searchText', type: 'string'},
+  searchEngine.remoteMethod('general', {
+        accepts: [
+          {arg: 'searchText', type: 'string'},
+          {arg: 'maxId', type: 'string'},
+          {arg: 'count', type: 'number'}
+          ],
         returns: {arg: 'result', type: 'object'},
         http: {verb: 'get'}
   });
 
   ///////////////////////////////// Search Experts
-  Searchengine.experts = function(searchText, maxId, count, cb) {
+  searchEngine.experts = function(searchText, maxId, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -114,7 +77,7 @@ module.exports = function(Searchengine) {
       };
 
       //console.log(`retrieving documents whose username or fullname or servicename match '${body.query.bool.must[0].match_phrase}' (displaying ${body.size} items at a time)...`);
-      search('test', 'Profiles', body)
+      search('test', 'profiles', body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);
@@ -127,7 +90,7 @@ module.exports = function(Searchengine) {
     })
   };
 
-  Searchengine.remoteMethod('experts', {
+  searchEngine.remoteMethod('experts', {
         accepts: [
           {arg: 'searchText', type: 'string'},
           {arg: 'maxId', type: 'string'},
@@ -138,7 +101,7 @@ module.exports = function(Searchengine) {
   });
 
   ///////////////////////////////// Search Categories
-  Searchengine.categories = function(searchText, maxId, count, cb) {
+  searchEngine.categories = function(searchText, maxId, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -162,7 +125,7 @@ module.exports = function(Searchengine) {
       };
 
       console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
-      search('test', 'Categories', body)
+      search('test', 'categories', body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);
@@ -175,7 +138,7 @@ module.exports = function(Searchengine) {
     })
   };
 
-  Searchengine.remoteMethod('categories', {
+  searchEngine.remoteMethod('categories', {
         accepts: [
           {arg: 'searchText', type: 'string'},
           {arg: 'maxId', type: 'string'},

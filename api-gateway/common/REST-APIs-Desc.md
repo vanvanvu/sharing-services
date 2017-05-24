@@ -4,7 +4,7 @@ REST APIs Description
 ## REST API - Accounts
 ### Create account
 __Request URL:__ 
-> POST  http://localhost:3000/api/Accounts
+> POST  http://localhost:3000/api/accounts
 
 __Request body:__ 
 ```
@@ -28,7 +28,7 @@ __Response body:__
 
 ### Login
 __Request URL:__ 
-> POST  http://localhost:3000/api/Accounts/login
+> POST  http://localhost:3000/api/accounts/login
 
 __Request body:__ 
 ```
@@ -50,7 +50,7 @@ __Response body:__
 ```
 ### Logout
 __Request URL:__ 
-> POST  http://localhost:3000/api/Accounts/logout?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+> POST  http://localhost:3000/api/accounts/logout?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -65,8 +65,8 @@ __Response body:__
 ```
 ## REST API - Profiles
 ### Get profile
-__Request URL:__ http://localhost:3000/api/Accounts/{account_id}/profiles?access_token={token_id}
-> GET  http://localhost:3000/api/Accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}/profiles?access_token={token_id}
+> GET  http://localhost:3000/api/accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -91,8 +91,8 @@ __Response body:__
 ```
 
 ### Edit profile
-__Request URL:__ http://localhost:3000/api/Accounts/{account_id}/profiles?access_token={token_id}
-> PUT  http://localhost:3000/api/Accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}/profiles?access_token={token_id}
+> PUT  http://localhost:3000/api/accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -123,8 +123,8 @@ __Response body:__
 }
 ```
 ### Set Expert mode
-__Request URL:__ http://localhost:3000/api/Profiles/{profile_id}/Expert?access_token={token_id}
-> POST  http://localhost:3000/api/Profiles/591200d7d40b1120f01ccb14/Expert?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/profiles/{profile_id}/Expert?access_token={token_id}
+> POST  http://localhost:3000/api/profiles/591200d7d40b1120f01ccb14/Expert?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -146,8 +146,8 @@ __Response body:__
 
 ## REST API - Experts
 ## Add service
-__Request URL:__ http://localhost:3000/api/Experts/{profile_id}/Service?access_token={token_id}
-> POST  http://localhost:3000/api/Experts/59122ea0b012c327888122ec/Service?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/experts/{profile_id}/Service?access_token={token_id}
+> POST  http://localhost:3000/api/experts/59122ea0b012c327888122ec/Service?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -175,8 +175,8 @@ __Response body:__
 
 ## REST API - Search-Engine
 ### General search
-__Request URL:__ http://localhost:3000/api/SearchEngines/general?access_token={token_id}
-> GET http://localhost:3000/api/SearchEngines/general?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/searchEngines/general?access_token={token_id}
+> GET http://localhost:3000/api/searchEngines/general?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
@@ -228,16 +228,14 @@ _type = "Categories"
 }
 ```
 ### Search Experts
-__Request URL:__ http://localhost:3000/api/SearchEngines/experts?access_token={token_id}
-> GET http://localhost:3000/api/SearchEngines/experts?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}
+
+> GET http://localhost:3000/api/searchEngines/general?searchText=c&maxId=0&count=20
+
 
 __Request body:__ 
 ```
-{
-  "searchText": "String",
-  "maxId": "String",
-  "count": "number"
-}
+{}
 ```
 __Response status code:__ 
 > 200
@@ -271,8 +269,8 @@ __Response body:__
 ```
 
 ### Search Categories
-__Request URL:__ http://localhost:3000/api/SearchEngines/categories?access_token={token_id}
-> GET http://localhost:3000/api/SearchEngines/experts?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/searchEngines/categories?access_token={token_id}
+> GET http://localhost:3000/api/searchEngines/experts?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```
