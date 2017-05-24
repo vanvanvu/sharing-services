@@ -175,14 +175,12 @@ __Response body:__
 
 ## REST API - Search-Engine
 ### General search
-__Request URL:__ http://localhost:3000/api/searchEngines/general?access_token={token_id}
-> GET http://localhost:3000/api/searchEngines/general?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}
+> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/general?searchText=c&maxId=0&count=20"
 
 __Request body:__ 
 ```
-{
-  "searchText": "String"
-}
+{}
 ```
 __Response status code:__ 
 > 200
@@ -190,7 +188,7 @@ __Response status code:__
 __Response body:__
 ```
 {
-    Results: [
+    "result": [
         0: {
             "_type": "",
             "_id": "",
@@ -204,34 +202,29 @@ __Response body:__
 ```
  
 ```
-_type = 'Profiles'
-{
-    "username": "String",
-    "fullname": "String",
-    "gender": "String(female, male, or ...)",
-    "avatarUrl": "String",
-    "serviceCount": "number",
-    "services": [
-        0: {
-            "serviceName": "String",
-            "serviceId": "String"
-        },
-        1: {...}
-    ]
+_type = 'profiles'
+"_data": {
+    "username": "",
+    "fullname": "",
+    "status": "off_line",
+    "biology": "",
+    "avatarUrl": "",
+    "isExpert": true,
+    "isFemale": false
 }
 
-_type = "Categories"
-{
-    "serviceName": "String",
+_type = "categories"
+"_data": {
+    "servicename": "String",
     "brief": "String",
-    "thumbnail": "String"
+    "thumbnailUrl": "String",
+    "expertId": "String"
 }
 ```
 ### Search Experts
-__Request URL:__ http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}
+__Request URL:__ http://localhost:3000/api/searchEngines/experts?searchText={text}&maxId={Idx}&count={count}
 
-> GET http://localhost:3000/api/searchEngines/general?searchText=c&maxId=0&count=20
-
+> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/experts?searchText=s&maxId=0&count=100"
 
 __Request body:__ 
 ```
@@ -243,23 +236,18 @@ __Response status code:__
 __Response body:__
 ```
 {
-    Results: [
+    "result": [
         0: {
-            "_type": "Profiles",
+            "_type": "profiles",
             "_id": "",
             "_data": {
                 "username": "String",
                 "fullname": "String",
-                "gender": "String(female, male, or ...)",
+                "status": "off_line",
+                "biology": "String",
                 "avatarUrl": "String",
-                "serviceCount": "number",
-                "services": [
-                    0: {
-                        "serviceName": "String",
-                        "serviceId": "String"
-                    },
-                    1: {...}
-                ]
+                "isExpert": true,
+                "isFemale": false
             }
         },
         1: {...},
@@ -269,16 +257,12 @@ __Response body:__
 ```
 
 ### Search Categories
-__Request URL:__ http://localhost:3000/api/searchEngines/categories?access_token={token_id}
-> GET http://localhost:3000/api/searchEngines/experts?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/searchEngines/categories?searchText={text}&maxId={Idx}&count={count}
+> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/categories?searchText=s&maxId=0&count=100"
 
 __Request body:__ 
 ```
-{
-  "searchText": "String",
-  "maxId": "String",
-  "count": "number"
-}
+{}
 ```
 __Response status code:__ 
 > 200
@@ -286,14 +270,15 @@ __Response status code:__
 __Response body:__
 ```
 {
-    Results: [
+    "result": [
         0: {
-            "_type": "Categories",
+            "_type": "categories",
             "_id": "",
             "_data": {
-                "serviceName": "String",
+                "servicename": "String",
                 "brief": "String",
-                "thumbnail": "String"
+                "thumbnailUrl": "String",
+                "expertId": "String"
             }
         },
         1: {...},

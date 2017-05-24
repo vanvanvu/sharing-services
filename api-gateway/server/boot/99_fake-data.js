@@ -39,6 +39,7 @@ module.exports = function(app) {
         var ser = {
           servicename: jsonObjServiceList.services[idx].servicename,
           brief: jsonObjServiceList.services[idx].brief
+          thumbnailUrl: "link-to-image"
         };
         return expert.service.create(ser);
       })
