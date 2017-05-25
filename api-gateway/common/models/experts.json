@@ -31,8 +31,27 @@
       "type": "hasMany",
       "model": "ratings",
       "foreignKey": "expertId"
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "accounts",
+      "foreignKey": "accountId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    }
+  ],
   "methods": {}
 }

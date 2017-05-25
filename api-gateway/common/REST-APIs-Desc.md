@@ -146,8 +146,8 @@ __Response body:__
 
 ## REST API - Experts
 ## Add service
-__Request URL:__ http://localhost:3000/api/experts/{profile_id}/Service?access_token={token_id}
-> POST  http://localhost:3000/api/experts/59122ea0b012c327888122ec/Service?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/experts/{expert_id}/service?access_token={token_id}
+> POST  http://localhost:3000/api/experts/59122ea0b012c327888122ec/service?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
 
 __Request body:__ 
 ```

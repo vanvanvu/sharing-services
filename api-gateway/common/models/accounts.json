@@ -13,6 +13,16 @@
       "type": "hasOne",
       "model": "profiles",
       "foreignKey": "accountId"
+    },
+    "experts": {
+      "type": "hasOne",
+      "model": "experts",
+      "foreignKey": "accountId"
+    },
+    "categories": {
+      "type": "hasMany",
+      "model": "categories",
+      "foreignKey": "accountId"
     }
   },
   "acls": [

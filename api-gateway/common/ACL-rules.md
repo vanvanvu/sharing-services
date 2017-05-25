@@ -1,25 +1,34 @@
 ACL rules of Models
 ------------------- 
-## Accounts
+## Model 'accounts'
 ```angular2html
-Belong to ACL rules of User model 
+Anyone can register as a user; then log in and log out.
 ```
 
-## Profiles
+## Model 'profiles'
 ```angular2html
-* Logged-in users can view edit their own profile, but can not delete profile entry 
 * Admin-user have full control
+* Logged-in users can view edit their own profile, but can not delete profile entry 
+* 
 
 ```
 
-## Experts
+## Model 'experts'
 ```angular2html
-* Logged-in users can view edit their own profile, but can not delete profile entry 
 * Admin-user have full control
+* Logged-in users can view, add, edit, and delete expert feature 
+
 ```
 
-## Ratings
+## Model 'categories'
 ```angular2html
-* Logged-in users can view edit their own profile, but can not delete profile entry 
 * Admin-user have full control
+* Logged-in users can view, add, edit, and delete their own categories
+```
+
+## 'ratings'
+```angular2html
+* Admin-user have full control
+* Logged-in users can view, add, edit, and delete their own ratings
+
 ```
