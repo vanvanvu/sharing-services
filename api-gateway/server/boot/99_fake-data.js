@@ -5,50 +5,48 @@ var async = require('async');
 module.exports = function(app) {
   /*
   var Accounts = app.models.accounts;
-  var Profiles = app.models.profiles;
-
   var data = fs.readFileSync('fake_data/fakedata_userlist.json');
   var jsonObj = JSON.parse(data);
   var serviceList = fs.readFileSync('fake_data/fakedata_servicelist.json');
   var jsonObjServiceList = JSON.parse(serviceList);
 
   var addNewAccount = function (dataEntry, cb) {
-    Accounts.findOrCreate({where: {email: dataEntry.email}}, dataEntry)
-      .then (function (data) {
-        var account = data[0];
-        return account.profiles();
-      })
-      .then (function (data1) {
-        var profile = data1;
-        return profile.updateAttribute("isExpert", true);
-      })
-      .then (function (data2) {
-        var ret = data2;
-        var item = {
-          serviceCount: 0
-        };
-        return ret.expert.create(item);
-      })
-      .then (function (data5) {
-        var expert = data5;
-        return expert.updateAttribute("serviceCount", expert.serviceCount + 1);
-      })
-      .then (function (data3) {
-        var expert = data3;
+    Accounts.findOrCreate({where: {email: dataEntry.email}}, dataEntry, function (err, account, isCreated){
+      if (err) {
+        console.error(err);
+        cb(err);
+        return;
+      }
+      account.updateAttribute("isExpert", true, function(err, ret) {
+        if (err) {
+          console.error(err);
+          cb(err);
+          return;
+        }
+
         var idx = Math.floor((Math.random() * (jsonObjServiceList.services.length - 1)) + 0);
         var ser = {
           servicename: jsonObjServiceList.services[idx].servicename,
-          brief: jsonObjServiceList.services[idx].brief
+          brief: jsonObjServiceList.services[idx].brief,
           thumbnailUrl: "link-to-image"
         };
-        return expert.service.create(ser);
-      })
-      .then (function (data6) {
-        cb();
-      })
-      .catch(function (err) {
-        cb(err);
+        ret.categories.create(ser, function(err, newData) {
+          if (err) {
+            console.error(err);
+            cb(err);
+            return;
+          }
+          
+          ret.updateAttribute("serviceCount", ret.serviceCount + 1, function(err, result){
+            if (err) {
+              cb(err);
+              return;
+            }
+            cb();
+          });
+        });
       });
+    });
   }
 
   var datas = [];

@@ -40,7 +40,6 @@ module.exports = function(searchEngine) {
           servicename: "String",
           brief: "String",
           thumbnailUrl: "String",
-          expertId: "String"
         }
       };
 
@@ -49,7 +48,6 @@ module.exports = function(searchEngine) {
       ret._data.servicename = source._source.servicename;
       ret._data.brief = source._source.brief;
       ret._data.thumbnailUrl = source._source.thumbnailUrl;
-      ret._data.expertId = source._source.expertId;
 
       return ret;
     }
@@ -76,7 +74,7 @@ module.exports = function(searchEngine) {
       };
 
       console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
-      search('test', ['profiles', 'categories'], body)
+      search('test1', ['accounts', 'categories'], body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);
@@ -86,7 +84,7 @@ module.exports = function(searchEngine) {
         var result = []
         for(var i = 0; i < results.hits.hits.length; i++) {
           var hit = results.hits.hits[i];
-          if (hit._type == "profiles") {
+          if (hit._type == "accounts") {
             result.push(resultEntryExpertConvert(hit));
           } else if (hit._type == "categories") {
             result.push(resultEntryCategoryConvert(hit));
@@ -138,7 +136,7 @@ module.exports = function(searchEngine) {
       };
 
       //console.log(`retrieving documents whose username or fullname or servicename match '${body.query.bool.must[0].match_phrase}' (displaying ${body.size} items at a time)...`);
-      search('test', 'profiles', body)
+      search('test1', 'accounts', body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);
@@ -148,7 +146,7 @@ module.exports = function(searchEngine) {
         var result = []
         for(var i = 0; i < results.hits.hits.length; i++) {
           var hit = results.hits.hits[i];
-          if (hit._type == "profiles") {
+          if (hit._type == "accounts") {
             result.push(resultEntryExpertConvert(hit));
           }
         }
@@ -195,7 +193,7 @@ module.exports = function(searchEngine) {
       };
 
       console.log(`retrieving documents whose username or fullname or servicename match '${body.query.multi_match.query}' (displaying ${body.size} items at a time)...`);
-      search('test', 'categories', body)
+      search('test1', 'categories', body)
       .then(results => {
         console.log(`found ${results.hits.total} items in ${results.took}ms`);
         if (results.hits.total > 0) console.log(`returned results:`);

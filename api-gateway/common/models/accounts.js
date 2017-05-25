@@ -52,41 +52,4 @@ module.exports = function(accounts) {
       console.log('> sending password reset email to:', info.email);
     });
   });*/
-
-  accounts.observe('after save', function filterProperties(ctx, next) {
-    //if (ctx.options && ctx.options.skipPropertyFilter) return next();
-    if (ctx.instance && ctx.isNewInstance) {
-      var account = ctx.instance;
-      // Create profile for account
-      account.profiles(function (err, profile) {
-        if (err) {
-          console.log(err);
-          next(err);
-          return;
-        }
-        if (profile !== null) {
-          next();
-          return;
-        }
-        var data = {
-          username: account.username,
-          fullname: "",
-          isFemale: false,
-          isExpert: false,
-          biology: "",
-          status: "off_line"
-        };
-        account.profiles.create(data, function(err, data) {
-          if (err) {
-            console.log(err);
-            next(err);
-            return;
-          }
-          console.log(data);
-          next();
-          }
-        );
-      });
-    }
-  });
 };

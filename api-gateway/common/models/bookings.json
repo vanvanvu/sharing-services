@@ -8,10 +8,10 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "experts": {
+    "accounts": {
       "type": "belongsTo",
-      "model": "experts",
-      "foreignKey": "expertId"
+      "model": "accounts",
+      "foreignKey": "accountId"
     }
   },
   "acls": [],

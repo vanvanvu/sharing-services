@@ -36,10 +36,6 @@
   "Email": {
     "dataSource": "mongoDbs"
   },
-  "experts": {
-    "dataSource": "mongoDbs",
-    "public": true
-  },
   "ratings": {
     "dataSource": "mongoDbs",
     "public": true
@@ -54,10 +50,6 @@
     "options": {
       "emailVerificationRequired": false
     }
-  },
-  "profiles": {
-    "dataSource": "mongoDbs",
-    "public": true
   },
   "categories": {
     "dataSource": "mongoDbs",

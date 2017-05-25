@@ -6,22 +6,46 @@
     "injectOptionsFromRemoteContext": true,
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "fullname": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "isFemale": {
+      "type": "boolean",
+      "default": false
+    },
+    "isExpert": {
+      "type": "boolean",
+      "default": false
+    },
+    "biology": {
+      "type": "string"
+    },
+    "serviceCount": {
+      "type": "number",
+      "default": 0
+    }
+  },
   "validations": [],
   "relations": {
-    "profiles": {
-      "type": "hasOne",
-      "model": "profiles",
-      "foreignKey": "accountId"
-    },
-    "experts": {
-      "type": "hasOne",
-      "model": "experts",
-      "foreignKey": "accountId"
-    },
     "categories": {
       "type": "hasMany",
       "model": "categories",
+      "foreignKey": "accountId"
+    },
+    "bookings": {
+      "type": "hasMany",
+      "model": "bookings",
+      "foreignKey": "accountId"
+    },
+    "ratings": {
+      "type": "hasMany",
+      "model": "ratings",
       "foreignKey": "accountId"
     }
   },
