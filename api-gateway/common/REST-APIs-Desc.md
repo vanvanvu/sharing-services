@@ -149,8 +149,7 @@ __Response body:__
 }
 ```
 
-## REST API - Categories
-## Add services
+## REST API - Add services
 __Request URL:__ http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
 
 > curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
@@ -177,6 +176,95 @@ __Response body:__
   "brief": "Giving demand for teen",
   "thumbnailUrl": "link-to-image",
   "id": "5927a041456f6047884b0641",
+  "accountId": "59270b963ad4d205e07c04a7"
+}
+```
+
+## REST API - Edit information services
+__Request URL:__ http://localhost:3000/api/categories/{service_id}?access_token={token_id}
+
+
+> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"brief\": \"new brief\"
+}" "http://localhost:3000/api/categories/5927a041456f6047884b0641?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+
+__Request body:__ 
+```
+{
+    "servicename": "string",
+    "brief": "string",
+    "thumbnailUrl": "string"
+}
+```
+__Response status code:__ 
+> 200
+
+__Response body:__
+```
+{
+  "servicename": "Psychology",
+  "brief": "new brief",
+  "thumbnailUrl": "link-to-image",
+  "id": "5927a041456f6047884b0641",
+  "accountId": "59270b963ad4d205e07c04a7"
+}
+```
+
+## REST API - Add ratings
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}/ratings?access_token={token_id}
+
+> curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"comment\": \"Awesome expert\",
+  \"rate\": 5,
+  \"ownername\": \"luxefoodanapa\"
+}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7/ratings?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+
+__Request body:__ 
+```
+{
+  "comment": "Awesome expert",
+  "rate": 5,
+  "ownername": "luxefoodanapa"
+}
+```
+__Response status code:__ 
+> 200
+
+__Response body:__
+```
+{
+  "comment": "Awesome expert",
+  "rate": 5,
+  "ownername": "luxefoodanapa",
+  "id": "5927a88e8d4df80994f00014",
+  "accountId": "59270b963ad4d205e07c04a7"
+}
+```
+
+## REST API - Edit Ratings
+__Request URL:__ http://localhost:3000/api/ratings/{rate_id}?access_token={token_id}
+
+> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"rate\": 3
+}" "http://localhost:3000/api/ratings/5927a88e8d4df80994f00014?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+
+__Request body:__ 
+```
+{
+    "comment": "string",
+    "rate": number
+}
+```
+__Response status code:__ 
+> 200
+
+__Response body:__
+```
+{
+  "comment": "Awesome expert",
+  "rate": 3,
+  "ownername": "luxefoodanapa",
+  "id": "5927a88e8d4df80994f00014",
   "accountId": "59270b963ad4d205e07c04a7"
 }
 ```
