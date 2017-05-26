@@ -65,8 +65,10 @@ __Response body:__
 ```
 ## REST API - Profiles
 ### Get profile
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}/profiles?access_token={token_id}
-> GET  http://localhost:3000/api/accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}
+> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7"
+
+
 
 __Request body:__ 
 ```
@@ -78,21 +80,23 @@ __Response status code:__
 __Response body:__
 ```
 {
-  "username": "vanvan",
-  "fullname": "van van vu",
+  "fullname": "luxefoodanapa fullname",
   "avatarUrl": "",
   "isFemale": false,
   "isExpert": true,
-  "biology": "None",
-  "status": "online",
-  "id": "590a00cd71ecab1668e77a2a",
-  "accountId": "590a00cd71ecab1668e77a29"
+  "serviceCount": 1,
+  "username": "luxefoodanapa",
+  "email": "luxefoodanapa@test.com",
+  "id": "59270b963ad4d205e07c04a7"
 }
 ```
 
 ### Edit profile
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}/profiles?access_token={token_id}
-> PUT  http://localhost:3000/api/accounts/590a00cd71ecab1668e77a29/profiles?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
+> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"fullname\": \"luxefoodanapa fullname\"
+}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+
 
 __Request body:__ 
 ```
@@ -102,7 +106,7 @@ __Request body:__
   "isFemale": false,
   "isExpert": false,
   "biology": "yolo",
-  "status": "offline"
+  "serviceCount: number
 }
 ```
 __Response status code:__ 
@@ -111,25 +115,26 @@ __Response status code:__
 __Response body:__
 ```
 {
-  "username": "vanvan",
-  "fullname": "test nama",
-  "avatarUrl": "http://abc.com/myavatar",
+  "fullname": "luxefoodanapa fullname",
+  "avatarUrl": "",
   "isFemale": false,
   "isExpert": true,
-  "biology": "yolo",
-  "status": "offline",
-  "id": "590a00cd71ecab1668e77a2a",
-  "accountId": "590a00cd71ecab1668e77a29"
+  "serviceCount": 1,
+  "username": "luxefoodanapa",
+  "email": "luxefoodanapa@test.com",
+  "id": "59270b963ad4d205e07c04a7"
 }
 ```
-### Set Expert mode
-__Request URL:__ http://localhost:3000/api/profiles/{profile_id}/Expert?access_token={token_id}
-> POST  http://localhost:3000/api/profiles/591200d7d40b1120f01ccb14/Expert?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+### Enable Expert mode
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
+> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"isExpert\": true
+}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
 
 __Request body:__ 
 ```
 {
-  "serviceCount": 0
+  "isExpert": true
 }
 ```
 __Response status code:__ 
@@ -144,18 +149,22 @@ __Response body:__
 }
 ```
 
-## REST API - Experts
-## Add service
-__Request URL:__ http://localhost:3000/api/experts/{expert_id}/service?access_token={token_id}
-> POST  http://localhost:3000/api/experts/59122ea0b012c327888122ec/service?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+## REST API - Categories
+## Add services
+__Request URL:__ http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
+
+> curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
+  \"servicename\": \"Psychology\",
+  \"brief\": \"Giving demand for teen\",
+  \"thumbnailUrl\": \"link-to-image\"
+}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7/categories?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
 
 __Request body:__ 
 ```
 {
   "name": "testService",
   "brief": "Test service",
-  "thumbnailUrl": "string",
-  "imageUrl": "string"
+  "thumbnailUrl": "string"
 }
 ```
 __Response status code:__ 
@@ -164,12 +173,11 @@ __Response status code:__
 __Response body:__
 ```
 {
-  "name": "testService",
-  "brief": "Test service",
-  "thumbnailUrl": "string",
-  "imageUrl": "string",
-  "id": "591233c6b012c327888122ed",
-  "expertId": "59122ea0b012c327888122ec"
+  "servicename": "Psychology",
+  "brief": "Giving demand for teen",
+  "thumbnailUrl": "link-to-image",
+  "id": "5927a041456f6047884b0641",
+  "accountId": "59270b963ad4d205e07c04a7"
 }
 ```
 
@@ -202,15 +210,15 @@ __Response body:__
 ```
  
 ```
-_type = 'profiles'
+_type = 'accounts'
 "_data": {
     "username": "",
     "fullname": "",
-    "status": "off_line",
     "biology": "",
     "avatarUrl": "",
     "isExpert": true,
-    "isFemale": false
+    "isFemale": false,
+    "status": ""
 }
 
 _type = "categories"
@@ -238,12 +246,12 @@ __Response body:__
 {
     "result": [
         0: {
-            "_type": "profiles",
+            "_type": "accounts",
             "_id": "",
             "_data": {
                 "username": "String",
                 "fullname": "String",
-                "status": "off_line",
+                "status": "",
                 "biology": "String",
                 "avatarUrl": "String",
                 "isExpert": true,

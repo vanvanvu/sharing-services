@@ -7,16 +7,20 @@
   },
   "properties": {
     "servicename": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "brief": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "thumbnailUrl": {
-      "type": "string"
+      "type": "string",
+      "default": "link-to-image"
     },
     "imageUrl": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     }
   },
   "validations": [],
@@ -40,6 +44,12 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "create"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
     },
     {
       "accessType": "WRITE",

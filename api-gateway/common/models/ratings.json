@@ -7,13 +7,16 @@
   },
   "properties": {
     "comment": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "rate": {
-      "type": "number"
+      "type": "number",
+      "default": 0
     },
     "ownername": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     }
   },
   "validations": [],
@@ -29,6 +32,25 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
       "permission": "ALLOW"
     }
   ],

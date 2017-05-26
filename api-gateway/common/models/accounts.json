@@ -24,7 +24,8 @@
       "default": false
     },
     "biology": {
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "serviceCount": {
       "type": "number",
@@ -54,6 +55,12 @@
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
       "permission": "ALLOW"
     }
   ],

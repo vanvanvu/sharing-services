@@ -40,6 +40,7 @@ module.exports = function(searchEngine) {
           servicename: "String",
           brief: "String",
           thumbnailUrl: "String",
+          expertId: "String"
         }
       };
 
@@ -48,6 +49,7 @@ module.exports = function(searchEngine) {
       ret._data.servicename = source._source.servicename;
       ret._data.brief = source._source.brief;
       ret._data.thumbnailUrl = source._source.thumbnailUrl;
+      ret._data.expertId = source._source.accountId;
 
       return ret;
     }
