@@ -23,7 +23,7 @@
       "type": "boolean",
       "default": false
     },
-    "biology": {
+    "description": {
       "type": "string",
       "default": ""
     },
