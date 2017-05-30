@@ -11,19 +11,17 @@
       "required": true,
       "default": "None"
     },
-    "latitude": {
-      "type": "string",
-      "required": true,
-      "default": "None"
-    },
-    "longitude": {
-      "type": "string",
-      "required": true,
-      "default": "None"
-    },
     "country": {
       "type": "string",
       "default": "None"
+    },
+    "geo": {
+      "type": "geopoint",
+      "required": true,
+      "default": {
+        "lat": 0,
+        "lng": 0
+      }
     }
   },
   "validations": [],

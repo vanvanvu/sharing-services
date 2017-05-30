@@ -6,9 +6,21 @@
     "validateUpsert": true
   },
   "properties": {
-    "servicename": {
+    "category": {
+      "type": "string",
+      "default": " "
+    },
+    "subcategory": {
       "type": "string",
       "default": ""
+    },
+    "display_attribute": {
+      "type": "object",
+      "default": {}
+    },
+    "layer_color": {
+      "type": "string",
+      "default": " "
     },
     "brief": {
       "type": "string",
@@ -21,6 +33,18 @@
     "imageUrl": {
       "type": "string",
       "default": ""
+    },
+    "level": {
+      "type": "string",
+      "default": " "
+    },
+    "price": {
+      "type": "string",
+      "default": " "
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
     }
   },
   "validations": [],

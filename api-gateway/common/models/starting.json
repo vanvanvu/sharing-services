@@ -1,0 +1,58 @@
+{
+  "name": "starting",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title_image": {
+      "type": "string",
+      "required": true,
+      "default": " "
+    },
+    "title_video": {
+      "type": "string",
+      "required": true,
+      "default": " "
+    },
+    "title_attribute": {
+      "type": "object",
+      "default": {
+        "font": "",
+        "color": ""
+      }
+    },
+    "image_desc": {
+      "type": "string",
+      "default": " "
+    },
+    "video_desc": {
+      "type": "string",
+      "default": " "
+    },
+    "desc_attribute": {
+      "type": "object",
+      "default": {
+        "font": "",
+        "color": ""
+      }
+    },
+    "layer_color": {
+      "type": "string",
+      "default": " "
+    },
+    "image_url": {
+      "type": "string",
+      "default": " "
+    },
+    "video_url": {
+      "type": "string",
+      "default": " "
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
