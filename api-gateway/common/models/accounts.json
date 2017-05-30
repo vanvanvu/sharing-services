@@ -11,23 +11,23 @@
       "type": "string",
       "default": ""
     },
-    "avatarUrl": {
+    "avatar_url": {
       "type": "string",
       "default": ""
     },
-    "isFemale": {
-      "type": "boolean",
-      "default": false
-    },
-    "isExpert": {
-      "type": "boolean",
-      "default": false
-    },
-    "description": {
+    "gender": {
       "type": "string",
       "default": ""
     },
-    "serviceCount": {
+    "biography": {
+      "type": "string",
+      "default": ""
+    },
+    "website": {
+      "type": "string",
+      "default": ""
+    },
+    "service_count": {
       "type": "number",
       "default": 0
     }
@@ -37,17 +37,27 @@
     "categories": {
       "type": "hasMany",
       "model": "categories",
-      "foreignKey": "accountId"
+      "foreignKey": "account_id"
     },
     "bookings": {
       "type": "hasMany",
       "model": "bookings",
-      "foreignKey": "accountId"
+      "foreignKey": "account_id"
     },
     "ratings": {
       "type": "hasMany",
       "model": "ratings",
-      "foreignKey": "accountId"
+      "foreignKey": "account_id"
+    },
+    "locations": {
+      "type": "hasOne",
+      "model": "locations",
+      "foreignKey": "account_id"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comments",
+      "foreignKey": "owner_id"
     }
   },
   "acls": [

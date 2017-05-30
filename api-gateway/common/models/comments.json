@@ -1,0 +1,58 @@
+{
+  "name": "comments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rating": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "text": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "created_time": {
+      "type": "date",
+      "required": true,
+      "default": ""
+    },
+    "owner": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "owner_avatar": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "owner_fullname": {
+      "type": "string",
+      "default": ""
+    },
+    "updated_time": {
+      "type": "date",
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {
+    "categories": {
+      "type": "belongsTo",
+      "model": "categories",
+      "foreignKey": "service_id"
+    },
+    "accounts": {
+      "type": "belongsTo",
+      "model": "accounts",
+      "foreignKey": "owner_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

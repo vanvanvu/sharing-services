@@ -24,7 +24,7 @@
     "accounts": {
       "type": "belongsTo",
       "model": "accounts",
-      "foreignKey": "accountId"
+      "foreignKey": "account_id"
     }
   },
   "acls": [

@@ -28,7 +28,12 @@
     "accounts": {
       "type": "belongsTo",
       "model": "accounts",
-      "foreignKey": "accountId"
+      "foreignKey": "account_id"
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "comments",
+      "foreignKey": "service_id"
     }
   },
   "acls": [
