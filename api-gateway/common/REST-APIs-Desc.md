@@ -125,27 +125,30 @@ __Response body:__
   "id": "59270b963ad4d205e07c04a7"
 }
 ```
-### Enable Expert mode
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
-> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"isExpert\": true
-}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
 
+## REST API - Get recommanded experts
+__Request URL:__
 __Request body:__ 
 ```
-{
-  "isExpert": true
-}
+{}
 ```
-__Response status code:__ 
-> 200
-
+__Response status code:__
+ > 200
+ 
 __Response body:__
 ```
 {
-  "serviceCount": 0,
-  "id": "59122ea0b012c327888122ec",
-  "profileId": "591200d7d40b1120f01ccb14"
+    "results": [
+        0: {
+            "username": "string",
+            "expert_title": "string",
+            "avatar_url": "string",
+            "location": "string",
+            "rating": 0
+        },
+        1: {...},
+        2: {...}
+    ]
 }
 ```
 
@@ -207,6 +210,32 @@ __Response body:__
   "thumbnailUrl": "link-to-image",
   "id": "5927a041456f6047884b0641",
   "accountId": "59270b963ad4d205e07c04a7"
+}
+```
+
+## REST API - Get recommanded categories
+__Request URL:__
+__Request body:__ 
+```
+{}
+```
+__Response status code:__
+ > 200
+ 
+__Response body:__
+```
+{
+    "results": [
+        0: {
+            "category": "string",
+            "sub_category": "string",
+            "image_url": "string",
+            "desc": "string",
+            "layer_color": "string"
+        },
+        1: {...},
+        2: {...}
+    ]
 }
 ```
 

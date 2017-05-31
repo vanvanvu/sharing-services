@@ -4,6 +4,19 @@ var path = require('path');
 var app = require('../../server/server');
 
 module.exports = function(accounts) {
+  accounts.recommend = function (maxId, count, cb) {
+    var reslut = {};
+    cb(null, result);
+  }
+  accounts.remoteMethod('recommend', {
+    accepts: [
+      {arg: 'maxId', type: 'string'},
+      {arg: 'count', type: 'number'}
+    ],
+    returns: {arg: 'result', type: 'object'},
+    http: {verb: 'get'}
+  });
+
   //send verification email after registration
 /*  accounts.afterRemote('create', function(context, user, next) {
     console.log('> user.afterRemote triggered');
