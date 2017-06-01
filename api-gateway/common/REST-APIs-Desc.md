@@ -161,10 +161,12 @@ __Response body:__
     "results": [
         0: {
             "username": "string",
+            "fullname": "string",
             "expert_title": "string",
             "avatar_url": "string",
             "location": "string",
-            "rating": 0
+            "rating": 0,
+            "id": "59270b963ad4d205e07c04a7"
         },
         1: {...},
         2: {...}
