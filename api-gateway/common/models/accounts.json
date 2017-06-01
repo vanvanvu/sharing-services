@@ -30,6 +30,10 @@
     "service_count": {
       "type": "number",
       "default": 0
+    },
+    "expert_title": {
+      "type": "string",
+      "default": " "
     }
   },
   "validations": [],

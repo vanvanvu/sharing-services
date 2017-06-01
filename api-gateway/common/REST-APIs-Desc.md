@@ -1,10 +1,12 @@
 REST APIs Description
 ---------------------
 
-## REST API - Accounts
-### Create account
+## Accounts
+### POST /accounts
+Create a new user account 
+
 __Request URL:__ 
-> POST  http://localhost:3000/api/accounts
+> http://localhost:3000/api/accounts
 
 __Request body:__ 
 ```
@@ -12,23 +14,38 @@ __Request body:__
   "username": "vantest4",
   "email": "test4@test.com",
   "password": "test"
+  "fullname": "",
+  "avatar_url": "",
+  "gender": "",
+  "biography": "",
+  "website": "",
+  "status": "string",
+  "expert_title": "string"
 }
 ```
-__Response status code:__ 
-> 200
+> Require: username, email, password, fullname
 
 __Response body:__
 ```
 {
-  "username": "vantest4",
-  "email": "test4@test.com",
-  "id": "591200d7d40b1120f01ccb13"
+  "fullname": "van van vu",
+  "avatar_url": "",
+  "gender": "",
+  "biography": "",
+  "website": "",
+  "expert_title": ""
+  "service_count": 0,
+  "username": "vanvv",
+  "email": "vanvv@test.com",
+  "id": "592f53c25b84c030d0ddb8b0"
 }
 ```
 
-### Login
+### POST /accounts/login
+Login a user with username/email and password. 
+
 __Request URL:__ 
-> POST  http://localhost:3000/api/accounts/login
+> http://localhost:3000/api/accounts/login
 
 __Request body:__ 
 ```
@@ -37,20 +54,21 @@ __Request body:__
     "password": "****"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
   "id": "7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb",
+  "ttl": 1209600,
   "created": "2014-12-23T08:31:33.464Z",
   "userId": "Sting"
 }
 ```
-### Logout
+### POST /accounts/logout
+Logout a user with access token.
+
 __Request URL:__ 
-> POST  http://localhost:3000/api/accounts/logout?access_token=7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb
+> http://localhost:3000/api/accounts/logout?access_token={token_id}
 
 __Request body:__ 
 ```
@@ -63,78 +81,80 @@ __Response body:__
 ```
 {}
 ```
-## REST API - Profiles
-### Get profile
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7"
 
+### GET /accounts/{id}
+Get information about a user by id
 
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "fullname": "luxefoodanapa fullname",
-  "avatarUrl": "",
-  "isFemale": false,
-  "isExpert": true,
-  "serviceCount": 1,
+  "fullname": "luxefoodanapa full-name",
+  "avatar_url": "",
+  "gender": "",
+  "biography": "",
+  "website": "",
+  "expert_title": "",
+  "service_count": 0,
   "username": "luxefoodanapa",
   "email": "luxefoodanapa@test.com",
   "id": "59270b963ad4d205e07c04a7"
 }
 ```
 
-### Edit profile
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
-> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"fullname\": \"luxefoodanapa fullname\"
-}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+### PUT /accounts/{id}
+Edit attributes for a user account 
 
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}?access_token={token_id}
 
 __Request body:__ 
 ```
 {
-  "fullname": "test name",
-  "avatarUrl": "http://abc.com/myavatar",
-  "isFemale": false,
-  "isExpert": false,
-  "biology": "yolo",
-  "serviceCount: number
+  "fullname": "",
+  "avatar_url": "",
+  "gender": "",
+  "biography": "",
+  "website": "",
+  "status": "string",
+  "expert_title": "string"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "fullname": "luxefoodanapa fullname",
-  "avatarUrl": "",
-  "isFemale": false,
-  "isExpert": true,
-  "serviceCount": 1,
+  "fullname": "luxefoodanapa full-name",
+  "avatar_url": "",
+  "gender": "",
+  "biography": "",
+  "website": "",
+  "expert_title": "",
+  "service_count": 0,
   "username": "luxefoodanapa",
   "email": "luxefoodanapa@test.com",
   "id": "59270b963ad4d205e07c04a7"
 }
 ```
 
-## REST API - Get recommanded experts
+## GET /accounts/recommend 
+Get a list of recommended experts for user
+
 __Request URL:__
+> http://localhost:3000/api/accounts/recommend?maxId={index}&count={count_number}&access_token={token_id}
+
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__
- > 200
- 
+
 __Response body:__
 ```
 {
