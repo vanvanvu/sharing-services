@@ -11,11 +11,10 @@ module.exports = function(searchEngine) {
         _data: {
           username: "",
           fullname: "",
+          expert_title: "",
           status: "",
-          biology: "",
-          avatarUrl: "",
-          isExpert: true,
-          isFemale: false
+          biography: "",
+          avatar_url: ""
         }
       };
 
@@ -23,11 +22,10 @@ module.exports = function(searchEngine) {
       ret._id = source._id;
       ret._data.username = source._source.username;
       ret._data.fullname = source._source.fullname;
+      ret._data.expert_title = source._source.expert_title;
       ret._data.status = source._source.status;
-      ret._data.biology = source._source.biology;
-      ret._data.avatarUrl = source._source.avatarUrl;
-      ret._data.isExpert = source._source.isExpert;
-      ret._data.isFemale = source._source.isFemale;
+      ret._data.biography = source._source.biography;
+      ret._data.avatar_url = source._source.avatar_url;
 
       return ret;
     }
@@ -37,19 +35,18 @@ module.exports = function(searchEngine) {
         _type: "",
         _id: "",
         _data: {
-          servicename: "String",
+          category: "String",
+          subcategory: "string",
           brief: "String",
-          thumbnailUrl: "String",
-          expertId: "String"
+          image_url: "String"
         }
       };
 
       ret._type = source._type;
       ret._id = source._id;
-      ret._data.servicename = source._source.servicename;
+      ret._data.category = source._source.category;
       ret._data.brief = source._source.brief;
-      ret._data.thumbnailUrl = source._source.thumbnailUrl;
-      ret._data.expertId = source._source.accountId;
+      ret._data.image_url = source._source.image_url;
 
       return ret;
     }

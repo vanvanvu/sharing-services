@@ -161,6 +161,7 @@ __Response body:__
     "results": [
         0: {
             "username": "string",
+            "fullname": "string",
             "expert_title": "string",
             "avatar_url": "string",
             "location": "string",
@@ -172,64 +173,74 @@ __Response body:__
 }
 ```
 
-## REST API - Add services
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
+## POST /accounts/{id}/categories 
+Create a new service of user
 
-> curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"servicename\": \"Psychology\",
-  \"brief\": \"Giving demand for teen\",
-  \"thumbnailUrl\": \"link-to-image\"
-}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7/categories?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
 
 __Request body:__ 
 ```
 {
-  "name": "testService",
-  "brief": "Test service",
-  "thumbnailUrl": "string"
+  "category": "Instrument Tutor",
+  "subcategory": "piano",
+  "brief": "somthings",
+  "image_url": "abc",
+  "tag": "#pianovanvv"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "servicename": "Psychology",
-  "brief": "Giving demand for teen",
-  "thumbnailUrl": "link-to-image",
-  "id": "5927a041456f6047884b0641",
-  "accountId": "59270b963ad4d205e07c04a7"
+  "category": "Instrument Tutor",
+  "subcategory": "piano",
+  "display_attribute": {
+    "font": "",
+    "color": ""
+  },
+  "layer_color": " ",
+  "brief": "somthings",
+  "image_url": "abc",
+  "level": " ",
+  "price": " ",
+  "rating": 0,
+  "tag": "#pianovanvv",
+  "id": "5930a99f9dd3cc15e8a134db",
+  "account_id": "592f53c25b84c030d0ddb8b0"
 }
 ```
 
-## REST API - Edit information services
-__Request URL:__ http://localhost:3000/api/categories/{service_id}?access_token={token_id}
+## PUT /accounts/{id}/categories/{fk} 
+Edit information services of user
 
-
-> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"brief\": \"new brief\"
-}" "http://localhost:3000/api/categories/5927a041456f6047884b0641?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}/categories/{category_id}?access_token={token_id}
 
 __Request body:__ 
 ```
 {
-    "servicename": "string",
-    "brief": "string",
-    "thumbnailUrl": "string"
+  "brief": "somthings",
+  "image_url": "abc",
+  "tag": "#pianovanvv"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "servicename": "Psychology",
-  "brief": "new brief",
-  "thumbnailUrl": "link-to-image",
-  "id": "5927a041456f6047884b0641",
-  "accountId": "59270b963ad4d205e07c04a7"
+  "category": "Instrument Tutor",
+  "subcategory": "guitar",
+  "display_attribute": {},
+  "layer_color": " ",
+  "brief": "tutorial guitar",
+  "image_url": "def",
+  "level": " ",
+  "price": " ",
+  "rating": 0,
+  "tag": "#guitarvanvv",
+  "id": "5930a99f9dd3cc15e8a134db",
+  "account_id": "592f53c25b84c030d0ddb8b0"
 }
 ```
 
@@ -318,17 +329,16 @@ __Response body:__
 }
 ```
 
-## REST API - Search-Engine
-### General search
-__Request URL:__ http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/general?searchText=c&maxId=0&count=20"
+## GET /searchEngines/general 
+Get a list of experts or categories by text-search
+
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}&access_token={token_id}
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -366,17 +376,17 @@ _type = "categories"
     "expertId": "String"
 }
 ```
-### Search Experts
-__Request URL:__ http://localhost:3000/api/searchEngines/experts?searchText={text}&maxId={Idx}&count={count}
+### GET /searchEngines/experts
+Get a list of experts by text-search
 
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/experts?searchText=s&maxId=0&count=100"
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/experts?searchText={text}&maxId={Idx}&count={count}&access_token={token_id}
+
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -388,11 +398,10 @@ __Response body:__
             "_data": {
                 "username": "String",
                 "fullname": "String",
-                "status": "",
-                "biology": "String",
-                "avatarUrl": "String",
-                "isExpert": true,
-                "isFemale": false
+                "expert_title": "string",
+                "avatar_url": "String",
+                "rating": 0,
+                "price": 0,
             }
         },
         1: {...},
@@ -401,16 +410,14 @@ __Response body:__
 }
 ```
 
-### Search Categories
-__Request URL:__ http://localhost:3000/api/searchEngines/categories?searchText={text}&maxId={Idx}&count={count}
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/categories?searchText=s&maxId=0&count=100"
+### GET /searchEngines/categories
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/categories?searchText={text}&maxId={Idx}&count={count}&access_token={token_id}
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -420,10 +427,10 @@ __Response body:__
             "_type": "categories",
             "_id": "",
             "_data": {
-                "servicename": "String",
+                "category": "String",
+                "subcategory": "string",
                 "brief": "String",
-                "thumbnailUrl": "String",
-                "expertId": "String"
+                "thumbnail_url": "String"
             }
         },
         1: {...},
