@@ -12,9 +12,18 @@ module.exports = function(searchEngine) {
           username: "",
           fullname: "",
           expert_title: "",
-          status: "",
           biography: "",
-          avatar_url: ""
+          avatar_url: "",
+          status: "",
+          price: "",
+          level: "",
+          rating: "",
+          location: {
+              name: "",
+              country: "",
+              latitude: "",
+              longitude: ""
+          }
         }
       };
 
@@ -26,7 +35,13 @@ module.exports = function(searchEngine) {
       ret._data.status = source._source.status;
       ret._data.biography = source._source.biography;
       ret._data.avatar_url = source._source.avatar_url;
-
+      ret._data.price = source._source.price;
+      ret._data.level = source._source.level;
+      ret._data.rating = source._source.rating;
+      ret._data.location.name = source._source.geo_name;
+      ret._data.location.country = source._source.geo_country;
+      ret._data.location.latitude = source._source.geo_latitude;
+      ret._data.location.longtitude = source._source.geo_longtitude;
       return ret;
     }
 
@@ -36,22 +51,29 @@ module.exports = function(searchEngine) {
         _id: "",
         _data: {
           category: "String",
-          subcategory: "string",
+          subcategory: "String",
           brief: "String",
-          image_url: "String"
+          image_url: "String",
+          layer_color: "String",
+          display_attribute: {
+              font: "",
+              color: ""
+          }
         }
       };
 
       ret._type = source._type;
       ret._id = source._id;
       ret._data.category = source._source.category;
+      ret._data.subcategory = source._source.subcategory;
       ret._data.brief = source._source.brief;
       ret._data.image_url = source._source.image_url;
-
+      ret._data.layer_color = source._source.layer_color;
+      ret._data.display_attribute = source._source.display_attribute;
       return ret;
     }
   ///////////////////////////////// General search
-  searchEngine.general = function(searchText, maxId, count, cb) {
+  searchEngine.general = function(searchText, start, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -62,7 +84,7 @@ module.exports = function(searchEngine) {
       };
       var body = {
         size: count,
-        from: maxId,
+        from: start,
         query: {
           multi_match: {
             query: searchText,
@@ -100,7 +122,7 @@ module.exports = function(searchEngine) {
   searchEngine.remoteMethod('general', {
         accepts: [
           {arg: 'searchText', type: 'string'},
-          {arg: 'maxId', type: 'string'},
+          {arg: 'start', type: 'string'},
           {arg: 'count', type: 'number'}
           ],
         returns: {arg: 'result', type: 'object'},
@@ -108,7 +130,7 @@ module.exports = function(searchEngine) {
   });
 
   ///////////////////////////////// Search Experts
-  searchEngine.experts = function(searchText, maxId, count, cb) {
+  searchEngine.experts = function(searchText, start, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -121,7 +143,7 @@ module.exports = function(searchEngine) {
 
       var body = {
         size: count,
-        from: maxId,
+        from: start,
         query: {
           multi_match: {
             query: searchText,
@@ -160,7 +182,7 @@ module.exports = function(searchEngine) {
   searchEngine.remoteMethod('experts', {
         accepts: [
           {arg: 'searchText', type: 'string'},
-          {arg: 'maxId', type: 'string'},
+          {arg: 'start', type: 'string'},
           {arg: 'count', type: 'number'}
           ],
         returns: {arg: 'result', type: 'object'},
@@ -168,7 +190,7 @@ module.exports = function(searchEngine) {
   });
 
   ///////////////////////////////// Search Categories
-  searchEngine.categories = function(searchText, maxId, count, cb) {
+  searchEngine.categories = function(searchText, start, count, cb) {
       const elasticsearch = require('elasticsearch');
       const esClient = new elasticsearch.Client({
         host: hostElastic,
@@ -181,7 +203,7 @@ module.exports = function(searchEngine) {
 
       let body = {
         size: count,
-        from: maxId,
+        from: start,
         query: {
           multi_match: {
             query: searchText,
@@ -216,7 +238,7 @@ module.exports = function(searchEngine) {
   searchEngine.remoteMethod('categories', {
         accepts: [
           {arg: 'searchText', type: 'string'},
-          {arg: 'maxId', type: 'string'},
+          {arg: 'start', type: 'string'},
           {arg: 'count', type: 'number'}
           ],
         returns: {arg: 'result', type: 'object'},

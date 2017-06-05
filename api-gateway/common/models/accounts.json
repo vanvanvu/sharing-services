@@ -27,13 +27,37 @@
       "type": "string",
       "default": ""
     },
-    "service_count": {
-      "type": "number",
-      "default": 0
-    },
     "expert_title": {
       "type": "string",
       "default": " "
+    },
+    "price": {
+      "type": "string",
+      "default": ""
+    },
+    "level": {
+      "type": "string",
+      "default": " "
+    },
+    "rating": {
+      "type": "number",
+      "default": 0
+    },
+    "geo_name": {
+      "type": "string",
+      "default": " "
+    },
+    "geo_country": {
+      "type": "string",
+      "default": ""
+    },
+    "geo_latitude": {
+      "type": "string",
+      "default": " "
+    },
+    "geo_longtitude": {
+      "type": "string",
+      "default": 0
     }
   },
   "validations": [],
@@ -48,33 +72,17 @@
       "model": "bookings",
       "foreignKey": "account_id"
     },
-    "ratings": {
-      "type": "hasMany",
-      "model": "ratings",
-      "foreignKey": "account_id"
-    },
-    "locations": {
-      "type": "hasOne",
-      "model": "locations",
-      "foreignKey": "account_id"
-    },
     "comments": {
       "type": "hasMany",
       "model": "comments",
-      "foreignKey": "owner_id"
+      "foreignKey": "account_id"
     }
   },
   "acls": [
     {
-      "accessType": "READ",
+      "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "admin",
       "permission": "ALLOW"
     }
   ],
