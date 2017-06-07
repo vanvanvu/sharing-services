@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = function(categories) {
-  categories.recommend = function (maxId, count, cb) {
-    var reslut = {};
+  categories.recommend = function (start, count, cb) {
+    var result = [];
     cb(null, result);
-  }
+  };
   categories.remoteMethod('recommend', {
     accepts: [
-      {arg: 'maxId', type: 'string'},
+      {arg: 'start', type: 'string'},
       {arg: 'count', type: 'number'}
     ],
     returns: {arg: 'result', type: 'object'},

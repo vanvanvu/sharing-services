@@ -21,17 +21,17 @@
       "required": true,
       "default": ""
     },
-    "owner": {
+    "creator_id": {
       "type": "string",
       "required": true,
       "default": ""
     },
-    "owner_avatar": {
+    "creator_avatar": {
       "type": "string",
       "required": true,
       "default": ""
     },
-    "owner_fullname": {
+    "creator_name": {
       "type": "string",
       "default": ""
     },
@@ -42,15 +42,10 @@
   },
   "validations": [],
   "relations": {
-    "categories": {
-      "type": "belongsTo",
-      "model": "categories",
-      "foreignKey": "service_id"
-    },
     "accounts": {
       "type": "belongsTo",
       "model": "accounts",
-      "foreignKey": "owner_id"
+      "foreignKey": "account_id"
     }
   },
   "acls": [],

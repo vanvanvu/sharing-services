@@ -11,16 +11,10 @@ __Request URL:__
 __Request body:__ 
 ```
 {
-  "username": "vantest4",
-  "email": "test4@test.com",
+  "username": "vanvv",
+  "email": "vanvv@test.com",
   "password": "test"
-  "fullname": "",
-  "avatar_url": "",
-  "gender": "",
-  "biography": "",
-  "website": "",
-  "status": "string",
-  "expert_title": "string"
+  "fullname": "van van vu"
 }
 ```
 > Require: username, email, password, fullname
@@ -34,7 +28,6 @@ __Response body:__
   "biography": "",
   "website": "",
   "expert_title": ""
-  "service_count": 0,
   "username": "vanvv",
   "email": "vanvv@test.com",
   "id": "592f53c25b84c030d0ddb8b0"
@@ -61,7 +54,7 @@ __Response body:__
   "id": "7G3ynXrMpHcMUMel6UQF18GsSZ1qbpAT4a8zUlliSVG3EpgtzCfb7BUI905aA3Nb",
   "ttl": 1209600,
   "created": "2014-12-23T08:31:33.464Z",
-  "userId": "Sting"
+  "userId": "592f53c25b84c030d0ddb8b0"
 }
 ```
 ### POST /accounts/logout
@@ -96,16 +89,22 @@ __Request body:__
 __Response body:__
 ```
 {
-  "fullname": "luxefoodanapa full-name",
-  "avatar_url": "",
-  "gender": "",
-  "biography": "",
-  "website": "",
-  "expert_title": "",
-  "service_count": 0,
-  "username": "luxefoodanapa",
-  "email": "luxefoodanapa@test.com",
-  "id": "59270b963ad4d205e07c04a7"
+    "username": "luxefoodanapa",
+    "email": "luxefoodanapa@test.com",
+    "id": "59270b963ad4d205e07c04a7"
+    "fullname": "luxefoodanapa full-name",
+    "avatar_url": "",
+    "gender": "",
+    "biography": "",
+    "website": "",
+    "expert_title": "",
+    "price": "",
+    "level": "",
+    "rating": 0,
+    "geo_name": "",
+    "geo_country": "",
+    "geo_latitude": "",
+    "geo_longtitude": ""
 }
 ```
 
@@ -124,23 +123,32 @@ __Request body:__
   "biography": "",
   "website": "",
   "status": "string",
-  "expert_title": "string"
+  "expert_title": "string",
+  "geo_name": "",
+  "geo_country": "",
+  "geo_latitude": "",
+  "geo_longtitude": "",
+  "price": ""
 }
 ```
 
 __Response body:__
 ```
 {
+  "username": "luxefoodanapa",
+  "email": "luxefoodanapa@test.com",
+  "id": "59270b963ad4d205e07c04a7"
   "fullname": "luxefoodanapa full-name",
   "avatar_url": "",
   "gender": "",
   "biography": "",
   "website": "",
   "expert_title": "",
-  "service_count": 0,
-  "username": "luxefoodanapa",
-  "email": "luxefoodanapa@test.com",
-  "id": "59270b963ad4d205e07c04a7"
+  "geo_name": "",
+  "geo_country": "",
+  "geo_latitude": "",
+  "geo_longtitude": "",
+  "price": ""
 }
 ```
 
@@ -148,7 +156,7 @@ __Response body:__
 Get a list of recommended experts for user
 
 __Request URL:__
-> http://localhost:3000/api/accounts/recommend?maxId={index}&count={count_number}&access_token={token_id}
+> http://localhost:3000/api/accounts/recommend?start={index}&count={count_number}&access_token={token_id}
 
 __Request body:__ 
 ```
@@ -164,9 +172,13 @@ __Response body:__
             "fullname": "string",
             "expert_title": "string",
             "avatar_url": "string",
-            "location": "string",
+            "geo_name": "",
+            "geo_country": "",
+            "geo_latitude": "",
+            "geo_longtitude": "",
             "rating": 0,
-            "id": "59270b963ad4d205e07c04a7"
+            "price": "string",
+            "level": "string"
         },
         1: {...},
         2: {...}
@@ -174,86 +186,100 @@ __Response body:__
 }
 ```
 
-## REST API - Add services
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
+## POST /accounts/{id}/categories 
+Create a new service of user
 
-> curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"servicename\": \"Psychology\",
-  \"brief\": \"Giving demand for teen\",
-  \"thumbnailUrl\": \"link-to-image\"
-}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7/categories?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}/categories?access_token={token_id}
 
 __Request body:__ 
 ```
 {
-  "name": "testService",
-  "brief": "Test service",
-  "thumbnailUrl": "string"
+  "category": "Instrument Tutor",
+  "subcategory": "piano",
+  "brief": "somthings",
+  "image_url": "abc",
+  "tag": "#pianovanvv"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "servicename": "Psychology",
-  "brief": "Giving demand for teen",
-  "thumbnailUrl": "link-to-image",
-  "id": "5927a041456f6047884b0641",
-  "accountId": "59270b963ad4d205e07c04a7"
+  "category": "Instrument Tutor",
+  "subcategory": "piano",
+  "display_attribute": {
+    "font": "",
+    "color": ""
+  },
+  "layer_color": " ",
+  "brief": "somthings",
+  "image_url": "abc",
+  "tag": "#pianovanvv",
+  "id": "5930a99f9dd3cc15e8a134db",
+  "account_id": "592f53c25b84c030d0ddb8b0"
 }
 ```
 
-## REST API - Edit information services
-__Request URL:__ http://localhost:3000/api/categories/{service_id}?access_token={token_id}
+## PUT /accounts/{id}/categories/{fk} 
+Edit information services of user
 
-
-> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"brief\": \"new brief\"
-}" "http://localhost:3000/api/categories/5927a041456f6047884b0641?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
+__Request URL:__ 
+> http://localhost:3000/api/accounts/{account_id}/categories/{category_id}?access_token={token_id}
 
 __Request body:__ 
 ```
 {
-    "servicename": "string",
-    "brief": "string",
-    "thumbnailUrl": "string"
+  "brief": "somthings",
+  "image_url": "abc",
+  "tag": "#pianovanvv"
 }
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
 {
-  "servicename": "Psychology",
-  "brief": "new brief",
-  "thumbnailUrl": "link-to-image",
-  "id": "5927a041456f6047884b0641",
-  "accountId": "59270b963ad4d205e07c04a7"
+  "category": "Instrument Tutor",
+  "subcategory": "guitar",
+  "display_attribute": {},
+  "layer_color": " ",
+  "brief": "tutorial guitar",
+  "image_url": "def",
+  "level": " ",
+  "price": " ",
+  "rating": 0,
+  "tag": "#guitarvanvv",
+  "id": "5930a99f9dd3cc15e8a134db",
+  "account_id": "592f53c25b84c030d0ddb8b0"
 }
 ```
 
-## REST API - Get recommanded categories
+## GET /categories/recommend  
+Get recommanded categories
+
 __Request URL:__
+> http://localhost:3000/api/categories/recommend?start={index}&count={count_number}&access_token={token_id}
+
+
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__
- > 200
- 
+
 __Response body:__
 ```
 {
-    "results": [
+    "result": [
         0: {
             "category": "string",
-            "sub_category": "string",
+            "subcategory": "string",
             "image_url": "string",
-            "desc": "string",
-            "layer_color": "string"
+            "brief": "string",
+            "layer_color": "string",
+            "display_attribute": {
+                "font": "",
+                "color": ""
+            }
         },
         1: {...},
         2: {...}
@@ -261,76 +287,16 @@ __Response body:__
 }
 ```
 
-## REST API - Add ratings
-__Request URL:__ http://localhost:3000/api/accounts/{account_id}/ratings?access_token={token_id}
+## GET /searchEngines/general 
+Get a list of experts or categories by text-search
 
-> curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"comment\": \"Awesome expert\",
-  \"rate\": 5,
-  \"ownername\": \"luxefoodanapa\"
-}" "http://localhost:3000/api/accounts/59270b963ad4d205e07c04a7/ratings?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
-
-__Request body:__ 
-```
-{
-  "comment": "Awesome expert",
-  "rate": 5,
-  "ownername": "luxefoodanapa"
-}
-```
-__Response status code:__ 
-> 200
-
-__Response body:__
-```
-{
-  "comment": "Awesome expert",
-  "rate": 5,
-  "ownername": "luxefoodanapa",
-  "id": "5927a88e8d4df80994f00014",
-  "accountId": "59270b963ad4d205e07c04a7"
-}
-```
-
-## REST API - Edit Ratings
-__Request URL:__ http://localhost:3000/api/ratings/{rate_id}?access_token={token_id}
-
-> curl -X PUT --header "Content-Type: application/json" --header "Accept: application/json" -d "{
-  \"rate\": 3
-}" "http://localhost:3000/api/ratings/5927a88e8d4df80994f00014?access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU&access_token=20H9i0Wh4qaQRAAmsWV3QpVMuhR89eeVOjp18JBEBFvh8BPI4qvNrngOa4rie6VU"
-
-__Request body:__ 
-```
-{
-    "comment": "string",
-    "rate": number
-}
-```
-__Response status code:__ 
-> 200
-
-__Response body:__
-```
-{
-  "comment": "Awesome expert",
-  "rate": 3,
-  "ownername": "luxefoodanapa",
-  "id": "5927a88e8d4df80994f00014",
-  "accountId": "59270b963ad4d205e07c04a7"
-}
-```
-
-## REST API - Search-Engine
-### General search
-__Request URL:__ http://localhost:3000/api/searchEngines/general?searchText={text}&maxId={Idx}&count={count}
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/general?searchText=c&maxId=0&count=20"
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/general?searchText={text}&start={Idx}&count={count}&access_token={token_id}
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -353,32 +319,45 @@ _type = 'accounts'
 "_data": {
     "username": "",
     "fullname": "",
-    "biology": "",
-    "avatarUrl": "",
-    "isExpert": true,
-    "isFemale": false,
-    "status": ""
+    "expert_title": "",
+    "biography": "",
+    "avatar_url": "",
+    "status": "",
+    "price": "",
+    "level": "",
+    "rating": "",
+    "location": {
+        "name": "",
+        "country": "",
+        "latitude": "",
+        "longitude": ""
+    }
 }
 
 _type = "categories"
 "_data": {
-    "servicename": "String",
+    "category": "String",
+    "subcategory": "String",
     "brief": "String",
-    "thumbnailUrl": "String",
-    "expertId": "String"
+    "image_url": "String",
+    "layer_color": "String",
+    "display_attribute": {
+        "font": "",
+        "color": ""
+    }
 }
 ```
-### Search Experts
-__Request URL:__ http://localhost:3000/api/searchEngines/experts?searchText={text}&maxId={Idx}&count={count}
+### GET /searchEngines/experts
+Get a list of experts by text-search
 
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/experts?searchText=s&maxId=0&count=100"
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/experts?searchText={text}&start={Idx}&count={count}&access_token={token_id}
+
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -388,13 +367,21 @@ __Response body:__
             "_type": "accounts",
             "_id": "",
             "_data": {
-                "username": "String",
-                "fullname": "String",
+                "username": "",
+                "fullname": "",
+                "expert_title": "",
+                "biography": "",
+                "avatar_url": "",
                 "status": "",
-                "biology": "String",
-                "avatarUrl": "String",
-                "isExpert": true,
-                "isFemale": false
+                "price": "",
+                "level": "",
+                "rating": "",
+                "location": {
+                    "name": "",
+                    "country": "",
+                    "latitude": "",
+                    "longitude": ""
+                }
             }
         },
         1: {...},
@@ -403,16 +390,14 @@ __Response body:__
 }
 ```
 
-### Search Categories
-__Request URL:__ http://localhost:3000/api/searchEngines/categories?searchText={text}&maxId={Idx}&count={count}
-> curl -X GET --header "Accept: application/json" "http://localhost:3000/api/searchEngines/categories?searchText=s&maxId=0&count=100"
+### GET /searchEngines/categories
+__Request URL:__ 
+> http://localhost:3000/api/searchEngines/categories?searchText={text}&start={Idx}&count={count}&access_token={token_id}
 
 __Request body:__ 
 ```
 {}
 ```
-__Response status code:__ 
-> 200
 
 __Response body:__
 ```
@@ -422,14 +407,80 @@ __Response body:__
             "_type": "categories",
             "_id": "",
             "_data": {
-                "servicename": "String",
+                "category": "String",
+                "subcategory": "String",
                 "brief": "String",
-                "thumbnailUrl": "String",
-                "expertId": "String"
+                "image_url": "String",
+                "layer_color": "String",
+                "display_attribute": {
+                    "font": "",
+                    "color": ""
+                }
             }
         },
         1: {...},
         2: {...}
+    ]
+}
+```
+
+## POST /accounts/{id}/comments
+Create a comment for a user
+
+__Request URL:__
+> http://localhost:3000/api/accounts/{account_id}/comments?access_token={token_id}
+
+__Request body:__ 
+```
+{
+  "text": "Awesome expert",
+  "rating": 5
+}
+```
+
+__Response body:__
+```
+{
+    "rating": "",
+    "text": "",
+    "created_time": "",
+    "creator_id": "",
+    "creator_avatar": "",
+    "creator_name": "",
+    "updated_time": "",
+    "id": "",
+    "account_id": ""
+}
+```
+
+## GET /accounts/{id}/listComments 
+Get list of comments' user
+
+__Request URL:__
+> http://localhost:3000/api/accounts/listComments?start={index}&count={count_number}&access_token={token_id}
+
+
+__Request body:__ 
+```
+{}
+```
+
+__Response body:__
+```
+{
+   "result": [
+       0: {
+            "rating": "",
+            "text": "",
+            "created_time": "",
+            "creator_id": "",
+            "creator_avatar": "",
+            "creator_name": "",
+            "updated_time": "",
+            "id": "",
+            "account_id": ""
+        },
+       1: {...}
     ]
 }
 ```

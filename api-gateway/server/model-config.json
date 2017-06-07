@@ -36,10 +36,6 @@
   "Email": {
     "dataSource": "mongoDbs"
   },
-  "ratings": {
-    "dataSource": "mongoDbs",
-    "public": true
-  },
   "payments": {
     "dataSource": "mongoDbs",
     "public": true

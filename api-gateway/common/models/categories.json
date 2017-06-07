@@ -16,7 +16,10 @@
     },
     "display_attribute": {
       "type": "object",
-      "default": {}
+      "default": {
+        "font": "",
+        "color": ""
+      }
     },
     "layer_color": {
       "type": "string",
@@ -26,11 +29,7 @@
       "type": "string",
       "default": ""
     },
-    "thumbnailUrl": {
-      "type": "string",
-      "default": "link-to-image"
-    },
-    "imageUrl": {
+    "image_url": {
       "type": "string",
       "default": ""
     },
@@ -57,11 +56,6 @@
       "type": "belongsTo",
       "model": "accounts",
       "foreignKey": "account_id"
-    },
-    "comments": {
-      "type": "hasMany",
-      "model": "comments",
-      "foreignKey": "service_id"
     }
   },
   "acls": [
