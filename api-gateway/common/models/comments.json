@@ -18,17 +18,14 @@
     },
     "created_time": {
       "type": "date",
-      "required": true,
       "default": ""
     },
     "creator_id": {
       "type": "string",
-      "required": true,
       "default": ""
     },
     "creator_avatar": {
       "type": "string",
-      "required": true,
       "default": ""
     },
     "creator_name": {
@@ -48,6 +45,13 @@
       "foreignKey": "account_id"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
