@@ -17,16 +17,37 @@ module.exports = function(accounts) {
     http: {verb: 'get'}
   });
 
-  accounts.listComments = function (start, count, cb) {
+  accounts.listComments = function (accountId, start, count, cb) {
     var result = [];
-    cb(null, result);
+    start = typeof start != "undefined" ? start : 0;
+    count = typeof count != "undefined" ? count : 20;
+    accounts.findById(accountId, {}, function (err, instance) {
+      if (err) {
+        console.error(err);
+        cb(null, err);
+        return;
+      }
+
+      instance.comments({}, function (err, listComments) {
+        if (err) {
+          console.error(err);
+          cb(null, err);
+          return;
+        }
+        result = listComments;
+        cb(null, result);
+      })
+    });
+
+
   };
   accounts.remoteMethod('listComments', {
     accepts: [
+      {arg: 'accountId', type: 'string'},
       {arg: 'start', type: 'string'},
       {arg: 'count', type: 'number'}
     ],
-    returns: {arg: 'result', type: 'array'},
+    returns: {arg: 'result', type: 'object'},
     http: {verb: 'get'}
   });
   //send verification email after registration

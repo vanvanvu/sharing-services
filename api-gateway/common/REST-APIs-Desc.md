@@ -441,15 +441,15 @@ __Request body:__
 __Response body:__
 ```
 {
-    "rating": "",
-    "text": "",
-    "created_time": "",
-    "creator_id": "",
-    "creator_avatar": "",
-    "creator_name": "",
-    "updated_time": "",
-    "id": "",
-    "account_id": ""
+  "rating": 5,
+  "text": "Awesome expert",
+  "created_time": "2017-06-08T02:34:42.590Z",
+  "creator_id": "5937ef898aa10dbccb6c2f2f",
+  "creator_avatar": "",
+  "creator_name": "vanvv",
+  "updated_time": "2017-06-08T02:34:42.590Z",
+  "id": "5938b7da2b7bca732fbd68e4",
+  "account_id": "5937f52f4b895705a6f4813b"
 }
 ```
 

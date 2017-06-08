@@ -1,7 +1,7 @@
 'use strict';
+var config = require('../../server/config.json');
 var app = require('../../server/server');
 module.exports = function(Comments) {
-    const Accounts = app.models.accounts;
     Comments.observe('before save', function updateTimestamp(ctx, next) {
         if (ctx.instance) {
             var newDate = new Date();
@@ -14,11 +14,12 @@ module.exports = function(Comments) {
     });
 
     Comments.observe('before save', function storeCreator(ctx, next) {
+      var Accounts = app.models.accounts;
         if (ctx.instance) {
             const token = ctx.options && ctx.options.accessToken;
             const userId = token && token.userId;
             ctx.instance.creator_id = userId;
-            Accounts.findById(userId, null, function(err, account){
+            Accounts.findById(userId, {}, function(err, account){
                 if(err) {
                     console.error(err);
                     next(err);
