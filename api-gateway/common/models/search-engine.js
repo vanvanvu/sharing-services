@@ -43,7 +43,7 @@ module.exports = function(searchEngine) {
       ret._data.location.latitude = source._source.geo_latitude;
       ret._data.location.longtitude = source._source.geo_longtitude;
       return ret;
-    }
+    };
 
     var resultEntryCategoryConvert = function (source) {
       var ret = {
@@ -89,7 +89,7 @@ module.exports = function(searchEngine) {
           multi_match: {
             query: searchText,
             type: "phrase_prefix",
-            fields: ['username', 'fullname', 'servicename']
+            fields: ['username', 'fullname', 'category', 'subcategory', 'tag']
           }
         }
       };
@@ -150,9 +150,6 @@ module.exports = function(searchEngine) {
             type: "phrase_prefix",
             fields: ['username', 'fullname']
           }
-        },
-        filter: {
-          term: {isExpert: true}
         }
       };
 
@@ -201,14 +198,14 @@ module.exports = function(searchEngine) {
         return esClient.search({index: index, type: type, body: body});
       };
 
-      let body = {
+      var body = {
         size: count,
         from: start,
         query: {
           multi_match: {
             query: searchText,
             type: "phrase_prefix",
-            fields: ['servicename']
+            fields: ['category', 'subcategory', 'tag']
           }
         }
       };

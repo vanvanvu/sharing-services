@@ -34,12 +34,10 @@ module.exports = function(accounts) {
           cb(null, err);
           return;
         }
-        result = listComments;
+        result = listComments.slice(start, start + count);
         cb(null, result);
       })
     });
-
-
   };
   accounts.remoteMethod('listComments', {
     accepts: [
