@@ -166,19 +166,26 @@ __Request body:__
 __Response body:__
 ```
 {
-    "results": [
+    "result": [
         0: {
-            "username": "string",
-            "fullname": "string",
-            "expert_title": "string",
-            "avatar_url": "string",
-            "geo_name": "",
-            "geo_country": "",
-            "geo_latitude": "",
-            "geo_longtitude": "",
+            "fullname": "jogjaeatguide full-name",
+            "avatar_url": "",
+            "gender": "",
+            "biography": "",
+            "website": "",
+            "expert_title": "Marine Biologist",
+            "descs": "",
+            "price": "",
+            "level": " ",
             "rating": 0,
-            "price": "string",
-            "level": "string"
+            "geo_name": " ",
+            "geo_country": "",
+            "geo_latitude": " ",
+            "geo_longtitude": 0,
+            "username": "jogjaeatguide",
+            "email": "jogjaeatguide@test.com",
+            "id": "593b2f709699833e34fa17d4",
+            "desc": "Meet Chris Meyer, a scientist from the National Museum of Natural History. He talks about the ocean and his favorite animal the cowrie snail."
         },
         1: {...},
         2: {...}
@@ -458,7 +465,6 @@ Get list of comments' user
 
 __Request URL:__
 > http://localhost:3000/api/accounts/listComments?start={index}&count={count_number}&access_token={token_id}
-
 
 __Request body:__ 
 ```

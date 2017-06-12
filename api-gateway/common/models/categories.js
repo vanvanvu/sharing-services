@@ -2,8 +2,20 @@
 
 module.exports = function(categories) {
   categories.recommend = function (start, count, cb) {
-    var result = [];
-    cb(null, result);
+    var result = {};
+    var filter = {
+      limit: count,
+      skip: start
+    };
+    categories.find(filter, function(err, list) {
+      if(err) {
+        console.error(err);
+        cb(null, err);
+        return;
+      }
+      result = list;
+      cb(null, result);
+    });
   };
   categories.remoteMethod('recommend', {
     accepts: [

@@ -3,7 +3,6 @@ var fs=require('fs');
 var async = require('async');
 
 module.exports = function(app) {
-  /*
   var Accounts = app.models.accounts;
   var data = fs.readFileSync('fake_data/fakedata_userlist.json');
   var jsonObj = JSON.parse(data);
@@ -17,34 +16,19 @@ module.exports = function(app) {
         cb(err);
         return;
       }
-      account.updateAttribute("isExpert", true, function(err, ret) {
+      var idx = Math.floor((Math.random() * (jsonObjServiceList.services.length - 1)) + 0);
+
+      var updateInfor = {
+        expert_title: jsonObjServiceList.services[idx].servicename,
+        desc: jsonObjServiceList.services[idx].brief
+      };
+      account.updateAttributes(updateInfor, function(err, ret) {
         if (err) {
           console.error(err);
           cb(err);
           return;
         }
-
-        var idx = Math.floor((Math.random() * (jsonObjServiceList.services.length - 1)) + 0);
-        var ser = {
-          servicename: jsonObjServiceList.services[idx].servicename,
-          brief: jsonObjServiceList.services[idx].brief,
-          thumbnailUrl: "link-to-image"
-        };
-        ret.categories.create(ser, function(err, newData) {
-          if (err) {
-            console.error(err);
-            cb(err);
-            return;
-          }
-          
-          ret.updateAttribute("serviceCount", ret.serviceCount + 1, function(err, result){
-            if (err) {
-              cb(err);
-              return;
-            }
-            cb();
-          });
-        });
+      cb();
       });
     });
   }
@@ -54,14 +38,14 @@ module.exports = function(app) {
     var entry = {
       email: jsonObj.users[i] + "@test.com",
       username: jsonObj.users[i],
+      fullname: jsonObj.users[i] + " full-name",
       password: "test"
     };
     datas.push(entry);
   }
 
-  async.eachLimit(datas, 1, addNewAccount, function (err) {
+  /*async.eachLimit(datas, 1, addNewAccount, function (err) {
 
-  });
-  */
+  });*/
 };
 

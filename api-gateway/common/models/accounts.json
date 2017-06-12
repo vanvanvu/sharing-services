@@ -29,7 +29,11 @@
     },
     "expert_title": {
       "type": "string",
-      "default": " "
+      "default": ""
+    },
+    "descs": {
+      "type": "string",
+      "default": ""
     },
     "price": {
       "type": "string",

@@ -6,7 +6,19 @@ var app = require('../../server/server');
 module.exports = function(accounts) {
   accounts.recommend = function (start, count, cb) {
     var result = {};
-    cb(null, result);
+    var filter = {
+      limit: count,
+      skip: start
+    };
+    accounts.find(filter, function(err, list) {
+      if(err) {
+        console.error(err);
+        cb(null, err);
+        return;
+      }
+      result = list;
+      cb(null, result);
+    });
   };
   accounts.remoteMethod('recommend', {
     accepts: [
@@ -28,13 +40,13 @@ module.exports = function(accounts) {
         return;
       }
 
-      instance.comments({}, function (err, listComments) {
+      instance.comments({limit: count, skip: start}, function (err, listComments) {
         if (err) {
           console.error(err);
           cb(null, err);
           return;
         }
-        result = listComments.slice(start, start + count);
+        result = listComments;
         cb(null, result);
       })
     });
