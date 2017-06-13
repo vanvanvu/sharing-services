@@ -1,6 +1,35 @@
 REST APIs Description
 ---------------------
 
+## Tutorial
+### GET /starting
+Get Tutors 
+
+__Request URL__
+> http://localhost:3000/api/startings/tutor?index=0
+
+__Respond body__
+```
+{
+    "title_image": " ",
+    "title_video": " ",
+    "title_attribute": {
+        "font": "",
+        "color": ""
+    },
+    "image_desc": " ",
+    "video_desc": " ",
+    "desc_attribute": {
+        "font": "",
+        "color": ""
+    },
+    "layer_color": " ",
+    "image_url": " ",
+    "video_url": " ",
+    "id": "string"
+}
+```
+
 ## Accounts
 ### POST /accounts
 Create a new user account 
