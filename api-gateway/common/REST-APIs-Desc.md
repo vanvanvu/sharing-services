@@ -196,7 +196,7 @@ __Response body:__
 ```
 {
     "result": [
-        0: {
+        {
             "fullname": "jogjaeatguide full-name",
             "avatar_url": "",
             "gender": "",
@@ -216,8 +216,8 @@ __Response body:__
             "id": "593b2f709699833e34fa17d4",
             "desc": "Meet Chris Meyer, a scientist from the National Museum of Natural History. He talks about the ocean and his favorite animal the cowrie snail."
         },
-        1: {...},
-        2: {...}
+        {...},
+        {...}
     ]
 }
 ```
@@ -306,7 +306,7 @@ __Response body:__
 ```
 {
     "result": [
-        0: {
+        {
             "category": "Music",
             "subcategory": "guitar",
             "display_attribute": {},
@@ -320,8 +320,8 @@ __Response body:__
             "id": "5930a99f9dd3cc15e8a134db",
             "account_id": "592f53c25b84c030d0ddb8b0"
         },
-        1: {...},
-        2: {...}
+        {...},
+        {...}
     ]
 }
 ```
@@ -341,14 +341,14 @@ __Response body:__
 ```
 {
     "result": [
-        0: {
+        {
             "_type": "",
             "_id": "",
             "_data": {
             }
         },
-        1: {...},
-        2: {...}
+        {...},
+        {...}
     ]
 }
 ```
@@ -402,7 +402,7 @@ __Response body:__
 ```
 {
     "result": [
-        0: {
+        {
             "_type": "accounts",
             "_id": "",
             "_data": {
@@ -423,8 +423,8 @@ __Response body:__
                 }
             }
         },
-        1: {...},
-        2: {...}
+        {...},
+        {...}
     ]
 }
 ```
@@ -442,7 +442,7 @@ __Response body:__
 ```
 {
     "result": [
-        0: {
+        {
             "_type": "categories",
             "_id": "",
             "_data": {
@@ -457,8 +457,8 @@ __Response body:__
                 }
             }
         },
-        1: {...},
-        2: {...}
+        {...},
+        {...}
     ]
 }
 ```
@@ -507,7 +507,7 @@ __Response body:__
 ```
 {
    "result": [
-       0: {
+       {
             "rating": "",
             "text": "",
             "created_time": "",
@@ -518,7 +518,7 @@ __Response body:__
             "id": "",
             "account_id": ""
         },
-       1: {...}
+       {...}
     ]
 }
 ```
