@@ -52,6 +52,7 @@ module.exports = function(searchEngine) {
         _data: {
           category: "String",
           subcategory: "String",
+          tag: "string",
           brief: "String",
           image_url: "String",
           layer_color: "String",
@@ -66,6 +67,7 @@ module.exports = function(searchEngine) {
       ret._id = source._id;
       ret._data.category = source._source.category;
       ret._data.subcategory = source._source.subcategory;
+      ret._data.tag = source._source.tag;
       ret._data.brief = source._source.brief;
       ret._data.image_url = source._source.image_url;
       ret._data.layer_color = source._source.layer_color;

@@ -275,7 +275,7 @@ __Request body:__
 __Response body:__
 ```
 {
-  "category": "Instrument Tutor",
+  "category": "Music",
   "subcategory": "guitar",
   "display_attribute": {},
   "layer_color": " ",
@@ -307,15 +307,18 @@ __Response body:__
 {
     "result": [
         0: {
-            "category": "string",
-            "subcategory": "string",
-            "image_url": "string",
-            "brief": "string",
-            "layer_color": "string",
-            "display_attribute": {
-                "font": "",
-                "color": ""
-            }
+            "category": "Music",
+            "subcategory": "guitar",
+            "display_attribute": {},
+            "layer_color": " ",
+            "brief": "tutorial guitar",
+            "image_url": "def",
+            "level": " ",
+            "price": " ",
+            "rating": 0,
+            "tag": "#guitarvanvv",
+            "id": "5930a99f9dd3cc15e8a134db",
+            "account_id": "592f53c25b84c030d0ddb8b0"
         },
         1: {...},
         2: {...}
