@@ -60,6 +60,26 @@ module.exports = function(accounts) {
     returns: {arg: 'result', type: 'object'},
     http: {verb: 'get'}
   });
+
+  accounts.changePassword = function (accountId, oldPassword, newPassword, cb) {
+    var changePass = accounts.changePassword(accountId, oldPassword, newPassword);
+    changePass.then( function (result) {
+      cb(null, result);
+    }).catch (function (err) {
+      console.error(err);
+      cb(null, err);
+    });
+  };
+  accounts.remoteMethod('changePassword', {
+    accepts: [
+      {arg: 'accountId', type: 'string'},
+      {arg: 'oldPassword', type: 'string'},
+      {arg: 'newPassword', type: 'string'}
+    ],
+    returns: {arg: 'result', type: 'object'},
+    http: {verb: 'post'}
+  });
+
   //send verification email after registration
 /*  accounts.afterRemote('create', function(context, user, next) {
     console.log('> user.afterRemote triggered');

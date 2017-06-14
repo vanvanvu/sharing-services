@@ -14,7 +14,7 @@ module.exports = function(app) {
     var credentials = {
       "user": "email@address.com",
       "pass": "xxx"
-    }
+    };
     res.render('login', {
       email: credentials.user,
       password: credentials.pass
