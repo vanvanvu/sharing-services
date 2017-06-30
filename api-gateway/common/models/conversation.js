@@ -1,31 +1,38 @@
 'use strict';
 
-var QB = require('quickblox');
+var webRTC = require('../../quickblox/config');
 
-var CREDENTIALS = {
-  appId: 28287,
-  authKey: 'XydaWcf8OO9xhGT',
-  authSecret: 'JZfqTspCvELAmnW'
-};
- 
-QB.init(CREDENTIALS.appId, CREDENTIALS.authKey, CREDENTIALS.authSecret);
 module.exports = function(Conversation) {
     //New session for conversation
     Conversation.session = function (params, cb) {
         if(params) {
-            QB.createSession(params, function(err, result) {
+            webRTC.QB.createSession(params, function(err, result) {
                 console.log('Session create callback', err, result);
                 if (err) {
                     cb(null, err);
                 }
+                Conversation.create({sessionToken: result}, function(err, instance) {
+                    if (err) {
+                        cb(null, err);
+                        return;
+                    }
+                    cb(null, instance);
+                });
                 cb(null, {});
             };
         } else {
-            QB.createSession(function(err, result) {
+            webRTC.QB.createSession(function(err, result) {
                 console.log('Session create callback', err, result);
                 if (err) {
                     cb(null, err);
                 }
+                Conversation.create({sessionToken: result}, function(err, instance) {
+                    if (err) {
+                        cb(null, err);
+                        return;
+                    }
+                    cb(null, instance);
+                });
                 cb(null, {});
             };
         }
@@ -41,7 +48,7 @@ module.exports = function(Conversation) {
     params = {'login': "emporio", 'password': "somepass", 'tag': "man"}
     */
     Conversation.signup = function (params, cb) {
-        QB.users.create(params, function(err, result) {
+        webRTC.QB.users.create(params, function(err, result) {
             console.log('sign-up a new user', err, result);
             if (err) {
                 cb(null, err);
@@ -60,7 +67,7 @@ module.exports = function(Conversation) {
     params = {'login': "emporio", 'password': "somepass"}
     */
     Conversation.signin = function (params, cb) {
-        QB.login(params, function(err, user) {
+        webRTC.QB.login(params, function(err, user) {
             console.log('Login to quickblox server', err, result);
             if (user) {
                 cb(null, {});       
@@ -80,7 +87,7 @@ module.exports = function(Conversation) {
     params = {'provider': "twitter", 'keys[token]': "...", 'keys[secret]': "..."}
     */
     Conversation.signin3rd = function (params, cb) {
-        QB.login(params, function(err, user) {
+        webRTC.QB.login(params, function(err, user) {
             console.log('Login to quickblox server', err, result);
             if (user) {
                 cb(null, {});       
