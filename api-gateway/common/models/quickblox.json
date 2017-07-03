@@ -1,0 +1,26 @@
+{
+  "name": "Quickblox",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accounts": {
+      "type": "belongsTo",
+      "model": "accounts",
+      "foreignKey": "accountId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
