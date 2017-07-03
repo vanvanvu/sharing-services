@@ -74,5 +74,9 @@
   "conversation": {
     "dataSource": "mongoDbs",
     "public": true
+  },
+  "Quickblox": {
+    "dataSource": "mongoDbs",
+    "public": true
   }
 }

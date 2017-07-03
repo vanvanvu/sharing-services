@@ -80,6 +80,11 @@
       "type": "hasMany",
       "model": "comments",
       "foreignKey": "account_id"
+    },
+    "quickbloxes": {
+      "type": "hasOne",
+      "model": "Quickblox",
+      "foreignKey": "accountId"
     }
   },
   "acls": [
